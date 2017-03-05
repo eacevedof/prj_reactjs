@@ -113,11 +113,12 @@ chunk    {0} index.min.js (main) 869 kB [rendered]
 
 <h2>Errores</h2>
 <pre>
-<b>er:</b> ERROR in ./app/dist/index.js
+<b>er:</b>
+npm start
+ERROR in ./app/dist/index.js
 Module not found: Error: Cannot resolve 'file' or 'directory' ./components/FilterableProductTable.js in C:\xampp\htdocs\prj_reactjs\app\dist
  @ ./app/dist/index.js 11:30-79
 <b>sol:</b> 
-
 </pre>
 <!------------------------------------------------------------------------------------------------------------------------------------>
 <!------------------------------------------------------------------------------------------------------------------------------------>
