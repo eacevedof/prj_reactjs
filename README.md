@@ -145,8 +145,8 @@ index.min.js:631 [WDS] Hot Module Replacement enabled.
 <b>sol:</b>
 intentos:
     cambiando esto: <script src="/dist/js/index.min.js"></script> :s
-    en index.js cambio metodo react(..) por ReactDOM.render(<filterableproductrow/>,eDiv)
-
+    en index.js cambio metodo react(..) por ReactDOM.render(<filterableproductrow/>,eDiv) :S
+    devuelvo index.html a como estaba
 </pre>
 <!------------------------------------------------------------------------------------------------------------------------------------>
 <!------------------------------------------------------------------------------------------------------------------------------------>
