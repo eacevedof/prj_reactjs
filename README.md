@@ -120,7 +120,8 @@ ERROR in ./app/dist/index.js
 Module not found: Error: Cannot resolve 'file' or 'directory' ./components/FilterableProductTable.js in C:\xampp\htdocs\prj_reactjs\app\dist
  @ ./app/dist/index.js 11:30-79
 
-<b>sol:</b> 
+<b>sol:</b> cambio esta linea en dist/index.js
+import FiterableProductRow from "../src/components/FilterableProductTable.js" 
 </pre>
 <!------------------------------------------------------------------------------------------------------------------------------------>
 <!------------------------------------------------------------------------------------------------------------------------------------>
