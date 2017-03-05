@@ -122,6 +122,28 @@ Module not found: Error: Cannot resolve 'file' or 'directory' ./components/Filte
 
 <b>sol:</b> cambio esta linea en dist/index.js
 import FiterableProductRow from "../src/components/FilterableProductTable.js" 
+<b>er:</b>
+http://localhost:8080/
+[HMR] Waiting for update signal from WDS...
+ReactDOM.js:66 Download the React DevTools for a better development experience: https://fb.me/react-devtools
+SearchBar.js:6 Uncaught ReferenceError: React is not defined
+    at Object.<anonymous> (SearchBar.js:6)
+    at __webpack_require__ (bootstrap 15a917e…:555)
+    at fn (bootstrap 15a917e…:86)
+    at Object.<anonymous> (FilterableProductTable.js:5)
+    at __webpack_require__ (bootstrap 15a917e…:555)
+    at fn (bootstrap 15a917e…:86)
+    at Object.<anonymous> (index.js:7)
+    at __webpack_require__ (bootstrap 15a917e…:555)
+    at fn (bootstrap 15a917e…:86)
+    at Object.<anonymous> (bootstrap 15a917e…:578)
+    at __webpack_require__ (bootstrap 15a917e…:555)
+    at bootstrap 15a917e…:578
+    at bootstrap 15a917e…:578
+http://localhost:8080/favicon.ico Failed to load resource: the server responded with a status of 404 (Not Found)
+index.min.js:631 [WDS] Hot Module Replacement enabled.
+<b>sol:</b>
+intento cambiando esto: <script src="/dist/js/index.min.js"></script>
 </pre>
 <!------------------------------------------------------------------------------------------------------------------------------------>
 <!------------------------------------------------------------------------------------------------------------------------------------>
