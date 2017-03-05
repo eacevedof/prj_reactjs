@@ -109,6 +109,7 @@ chunk    {0} index.min.js (main) 869 kB [rendered]
         node_modules/
     </pre>
 </li>
+<li>- actualizo webpack.config.js con nuevas rutas</li>
 </ul>
 
 <h2>Errores</h2>
