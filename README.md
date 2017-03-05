@@ -144,12 +144,12 @@ http://localhost:8080/favicon.ico Failed to load resource: the server responded 
 index.min.js:631 [WDS] Hot Module Replacement enabled.
 <b>sol:</b>
 intentos:
-    cambiando esto: <script src="/dist/js/index.min.js"></script> :s
-    en index.js cambio metodo react(..) por ReactDOM.render(<filterableproductrow/>,eDiv) :S
+    cambiando esto: script src="/dist/js/index.min.js" /script :s
+    en index.js cambio metodo react(..) por ReactDOM.render(filterableproductrow/,eDiv) :S
     devuelvo index.html a como estaba :S
     No se si los tags en reactjxs tienen que ser iguales a los nombres de los componentes, yo los cambie por tener todo en minusculas. Voy a dejarlos 
     como en el video.
-    cambio index.js a ReactDOM.render(<FiterableProductRow/>,eDiv) :s
+    cambio index.js a ReactDOM.render(FiterableProductRow/,eDiv) :s
     ERROR in ./app/dist/index.js
 Module not found: Error: Cannot resolve 'file' or 'directory' ./components/FiterableProductRow.js in C:\xampp\htdocs\prj_reactjs\app\dist
  @ ./app/dist/index.js 11:27-73
