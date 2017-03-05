@@ -143,7 +143,10 @@ SearchBar.js:6 Uncaught ReferenceError: React is not defined
 http://localhost:8080/favicon.ico Failed to load resource: the server responded with a status of 404 (Not Found)
 index.min.js:631 [WDS] Hot Module Replacement enabled.
 <b>sol:</b>
-intento cambiando esto: <script src="/dist/js/index.min.js"></script>
+intentos:
+    cambiando esto: <script src="/dist/js/index.min.js"></script> :s
+    en index.js cambio metodo react(..) por ReactDOM.render(<filterableproductrow/>,eDiv)
+
 </pre>
 <!------------------------------------------------------------------------------------------------------------------------------------>
 <!------------------------------------------------------------------------------------------------------------------------------------>
