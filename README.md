@@ -149,7 +149,15 @@ intentos:
     devuelvo index.html a como estaba :S
     No se si los tags en reactjxs tienen que ser iguales a los nombres de los componentes, yo los cambie por tener todo en minusculas. Voy a dejarlos 
     como en el video.
-    cambio index.js a ReactDOM.render(<FiterableProductRow/>,eDiv)
+    cambio index.js a ReactDOM.render(<FiterableProductRow/>,eDiv) :s
+    ERROR in ./app/dist/index.js
+Module not found: Error: Cannot resolve 'file' or 'directory' ./components/FiterableProductRow.js in C:\xampp\htdocs\prj_reactjs\app\dist
+ @ ./app/dist/index.js 11:27-73
+    falta ese archivo (filtertableproductrow)
+    Revision completa de todos los archivos... 
+        Faltaba corregir el "entry"
+        Corregir src/index.js 
+        Corregir import Ract en todos los componentes. Este era el problema real
 </pre>
 <!------------------------------------------------------------------------------------------------------------------------------------>
 <!------------------------------------------------------------------------------------------------------------------------------------>

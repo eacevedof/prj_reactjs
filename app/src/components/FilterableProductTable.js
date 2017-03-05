@@ -1,7 +1,8 @@
 /**
  * app\src\components\FilterableProductTable.js 1.0.1
+ * https://youtu.be/1ymoW-mUPYQ?list=PLTUC0zY59vZHMLYBospfQoNrZO-vPvVub&t=809
  */
-import Ract from "react"
+import React from "react"
 import SearchBar from "./SearchBar.js"
 import ProductTable from "./ProductTable.js"
 

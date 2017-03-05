@@ -1,7 +1,8 @@
 /**
  * \app\src\components\SearchBar.js 1.0.0
+ * https://youtu.be/1ymoW-mUPYQ?list=PLTUC0zY59vZHMLYBospfQoNrZO-vPvVub&t=844
  */
-import Ract from "react"
+import React from "react"
 
 export default class SearchBar extends React.Component{
     constructor(){

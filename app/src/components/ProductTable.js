@@ -1,7 +1,8 @@
 /**
  * \app\src\components\ProductTable.js 1.0.1
+ * https://youtu.be/1ymoW-mUPYQ?list=PLTUC0zY59vZHMLYBospfQoNrZO-vPvVub&t=852
  */
-import Ract from "react"
+import React from "react"
 import ProductCategoryRow from "./ProductCategoryRow.js"
 import ProductRow from "./ProductRow.js"
 

@@ -1,7 +1,7 @@
 /**
  * \app\src\components\ProductRow.js 1.0.0
  */
-import Ract from "react"
+import React from "react"
 
 export default class ProductRow extends React.Component{
     constructor(){
