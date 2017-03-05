@@ -1,5 +1,5 @@
 /**
- * app\src\components\FilterableProductTable.js 1.0.0
+ * app\src\components\FilterableProductTable.js 1.0.1
  */
 import Ract from "react"
 import SearchBar from "./SearchBar.js"
@@ -13,8 +13,8 @@ export default class FilterableProductTable extends React.Component{
     render(){
         return(
             <div>
-                <searchbar/>
-                <producttable/>
+                <SearchBar/>
+                <ProductTable/>
             </div>
         )
     }

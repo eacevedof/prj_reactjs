@@ -1,5 +1,5 @@
 /**
- * \app\src\components\ProductTable.js 1.0.0
+ * \app\src\components\ProductTable.js 1.0.1
  */
 import Ract from "react"
 import ProductCategoryRow from "./ProductCategoryRow.js"
@@ -13,14 +13,14 @@ export default class ProductTable extends React.Component{
     render(){
         return(
             <div>
-                <productcategoryrow/>
-                <productrow/>
-                <productrow/>
-                <productrow/>
-                <productcategoryrow/>
-                <productrow/>
-                <productrow/>
-                <productrow/>                
+                <ProductCategoryRow/>
+                <ProductRow/>
+                <ProductRow/>
+                <ProductRow/>
+                <ProductCategoryRow/>
+                <ProductRow/>
+                <ProductRow/>
+                <ProductRow/>                
             </div>
         )
     }
