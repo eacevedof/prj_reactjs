@@ -20,7 +20,7 @@ export default class FilterableProductTable extends React.Component{
         }
     }
 
-    filter_list(oEvent){
+    fn_onsearch(oEvent){
         console.log("filter_list.oEvent",oEvent)
         let sFilter = oEvent.target.value
         setTimeout(()=>{
@@ -35,7 +35,7 @@ export default class FilterableProductTable extends React.Component{
         console.log("FilterableProductTable.redner",this.props.store)
         return(
             <div>
-                <SearchBar fn_onchange={this.filter_list.bind(this)}/>
+                <SearchBar fnonsearch={this.fn_onsearch.bind(this)}/>
                 <ProductTable products={this.props.store} filter={this.state.filter}/>
             </div>
         )
