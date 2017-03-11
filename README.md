@@ -272,6 +272,7 @@ Faltaba corregir los renders de ProductCategoryRow y ProductRow
             función "filter_list" se estaria buscando en el componente SearchBar.<br/>
             En otras palabras con se le dice... para el componente SearchBar ejecuta el metodo <br/>
             FilterableProductTable.filter_list.<br/>
+            Con bind se crea un puntero a un metodo foraneo. <br/>
             <a href="https://youtu.be/_afpJ894lD4?list=PLTUC0zY59vZHMLYBospfQoNrZO-vPvVub&t=319" video="link" target="_blank">
             Con esta sentencia se hace un remplazo del "this" foraneo por el local.
             </a>

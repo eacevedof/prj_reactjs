@@ -13,25 +13,29 @@ export default class FilterableProductTable extends React.Component{
         //en este componente. Es curioso... cuando imprimo this se ve que tiene el atributo props pero si intento
         //referenciarlo me (this.props) me da undefined.
         console.log("FilterableProductTable.construct().this",this)
+
+        //state se usa para datos cambiantes, state es una especie de array con constantes
         this.state = {
             filter:null,
         }
     }
 
     filter_list(oEvent){
-        let filter = oEvent.target.value
+        console.log("filter_list.oEvent",oEvent)
+        let sFilter = oEvent.target.value
         setTimeout(()=>{
+            //setState actualiza el atributo dinamico
             this.setState({
-                filter: filter
+                filter: sFilter
             })
-        },1000)
+        },100)
     }
 
     render(){
         console.log("FilterableProductTable.redner",this.props.store)
         return(
             <div>
-                <SearchBar evchange={this.filter_list.bind(this)}/>
+                <SearchBar fn_onchange={this.filter_list.bind(this)}/>
                 <ProductTable products={this.props.store} filter={this.state.filter}/>
             </div>
         )

@@ -7,12 +7,13 @@ import React from "react"
 export default class SearchBar extends React.Component{
     constructor(){
         super()
+        console.log("SearchBar.construct()",this)
     }
 
     render(){
         return(
             <div>
-                <input type="text" onChange={this.props.evchange}/>
+                <input type="text" onChange={this.props.fn_onchange}/>
                 <input type="checkbox"/>
             </div>
         )
