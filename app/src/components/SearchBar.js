@@ -12,7 +12,7 @@ export default class SearchBar extends React.Component{
     render(){
         return(
             <div>
-                <input type="text" onChange={this.props.onChange}/>
+                <input type="text" onChange={this.props.evchange}/>
                 <input type="checkbox"/>
             </div>
         )

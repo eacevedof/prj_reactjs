@@ -20,16 +20,18 @@ export default class FilterableProductTable extends React.Component{
 
     filter_list(oEvent){
         let filter = oEvent.target.value
-        this.setState({
-            filter: filter
-        })
+        setTimeout(()=>{
+            this.setState({
+                filter: filter
+            })
+        },1000)
     }
 
     render(){
         console.log("FilterableProductTable.redner",this.props.store)
         return(
             <div>
-                <SearchBar onChange={this.filter_list.bind(this)}/>
+                <SearchBar evchange={this.filter_list.bind(this)}/>
                 <ProductTable products={this.props.store} filter={this.state.filter}/>
             </div>
         )
