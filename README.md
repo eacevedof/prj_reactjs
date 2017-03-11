@@ -225,6 +225,22 @@ __webpack_require__ @ bootstrap e4075f5…:555
 2warning.js:45 Warning: flattenChildren(...): Encountered two children with the same key, `.$Electronics`. Child keys must be unique; when two children share a key, only the first child will be used.
 
 <b>sol:</b> 
+Tenía mal este "if": if(oProduct.category!=sLastCategory) encerraba a todas las lineas inferiores
+
+<b>er:</b>
+No da error pero muestra esto:
+ProductCategoryRow
+ProductRow
+ProductRow
+ProductRow
+
+ProductCategoryRow
+ProductRow
+ProductRow
+ProductRow
+
+<b>sol:</b>
+Faltaba corregir los renders de ProductCategoryRow y ProductRow
 
 </pre>
 <!------------------------------------------------------------------------------------------------------------------------------------>

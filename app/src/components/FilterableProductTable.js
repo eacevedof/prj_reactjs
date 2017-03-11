@@ -10,10 +10,13 @@ export default class FilterableProductTable extends React.Component{
     constructor(){
         super()
         //por medio de esta llamada: <FilterableProductTable store={oDB}/> en index.js ya disponemos de la bd 
-        //en este componente
+        //en este componente. Es curioso... cuando imprimo this se ve que tiene el atributo props pero si intento
+        //referenciarlo me (this.props) me da undefined.
+        console.log("FilterableProductTable.construct().this",this)
     }
 
     render(){
+        console.log("FilterableProductTable.redner",this.props.store)
         return(
             <div>
                 <SearchBar/>
