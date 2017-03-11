@@ -1,5 +1,5 @@
 /**
- * \app\src\components\ProductTable.js 1.1.1
+ * \app\src\components\ProductTable.js 1.2.0
  * https://youtu.be/1ymoW-mUPYQ?list=PLTUC0zY59vZHMLYBospfQoNrZO-vPvVub&t=852
  */
 import React from "react"
@@ -18,7 +18,19 @@ export default class ProductTable extends React.Component{
         let arRows = []
         let sLastCategory = null
 
-        if(this.props.products!==null){
+        if(this.props.filter!=null && this.props.products!=null){
+            this.props.products.forEach((oProduct)=>{
+                let filter = this.props.filter
+                if(oProduct.name.includes(filter)){
+                    if(oProduct.category!=sLastCategory)
+                        arRows.push(<ProductCategoryRow category={oProduct.category} key={oProduct.category} />)
+                arRows.push(<ProductRow product={oProduct.name} key={oProduct.name} />)
+                sLastCategory = oProduct.category                        
+                }
+            })
+
+        }
+        else if(this.props.products!==null){
             this.props.products.forEach((oProduct)=>{
                 console.log(oProduct)
                 if(oProduct.category!=sLastCategory)

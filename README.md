@@ -1,6 +1,6 @@
 
 <!--
-\README.md 1.1.0
+\README.md 1.2.0
 -->
 <h1>Tutorial: Curso React  (codigofacilito) </h1>
 
@@ -241,7 +241,59 @@ ProductRow
 
 <b>sol:</b>
 Faltaba corregir los renders de ProductCategoryRow y ProductRow
+</pre>
+<!------------------------------------------------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------------------------------------------------>
+<h2>
+    <a href="https://youtu.be/_afpJ894lD4?list=PLTUC0zY59vZHMLYBospfQoNrZO-vPvVub" video="link" target="_blank">
+    Video 8 - Curso React - Eventos y Data change
+    </a>
+</h2>
 
+<ul>
+<li>Como la info cambia a traves del tiempo y se actualiza gracias a los componentes</li>
+<li>
+    <a href="https://youtu.be/_afpJ894lD4?list=PLTUC0zY59vZHMLYBospfQoNrZO-vPvVub&t=50" video="link" target="_blank">
+    configurando FilterableProductTable con props.state.filter
+    </a>
+</li>
+<li>
+    <a href="https://youtu.be/_afpJ894lD4?list=PLTUC0zY59vZHMLYBospfQoNrZO-vPvVub&t=100" video="link" target="_blank">
+    configurando ProductTable trata el filtro al cargar arRows
+    </a>
+</li>
+<li>
+    <a href="https://youtu.be/_afpJ894lD4?list=PLTUC0zY59vZHMLYBospfQoNrZO-vPvVub&t=288" video="link" target="_blank">
+    configurando SearchBar 
+    </a>
+    <ul>
+        <li>
+            <b>Atención con esto:</b> <pre>onChange={this.filter_list.bind(this)}</pre>. Si no se agrega bind(this) la <br/>
+            función "filter_list" se estaria buscando en el componente SearchBar.<br/>
+            En otras palabras con se le dice... para el componente SearchBar ejecuta el metodo <br/>
+            FilterableProductTable.filter_list.<br/>
+            <a href="https://youtu.be/_afpJ894lD4?list=PLTUC0zY59vZHMLYBospfQoNrZO-vPvVub&t=319" video="link" target="_blank">
+            Con esta sentencia se hace un remplazo del "this" foraneo por el local.
+            </a>
+        </li>
+        <li>
+            <a href="https://youtu.be/_afpJ894lD4?list=PLTUC0zY59vZHMLYBospfQoNrZO-vPvVub&t=358" video="link" target="_blank">
+            Configurando el metodo filter_list(oEv)
+            </a>        
+        </li>
+    </ul>
+</li>
+</ul>
+
+<h2>Errores</h2>
+<pre>
+<b>er:</b>
+    No hay error pero no recibe los valores. No funciona
+
+<b>sol:</b>
+    onChange={this.props.onChange} se estaba escribiendo en el checkbox
+    en ProductTable habia que cambiar la jerarquia del if, primero se comprueba 
+    this.props.filter!=null && this.props.products!=null
 </pre>
 <!------------------------------------------------------------------------------------------------------------------------------------>
 <!------------------------------------------------------------------------------------------------------------------------------------>
