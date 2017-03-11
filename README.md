@@ -304,7 +304,7 @@ Faltaba corregir los renders de ProductCategoryRow y ProductRow
 <!------------------------------------------------------------------------------------------------------------------------------------>
 <h2>
     <a href="https://youtu.be/kMhTpPG1WJM?list=PLTUC0zY59vZHMLYBospfQoNrZO-vPvVub" video="link" target="_blank">
-    Video 8 - Curso React - Single App y ReactRouter
+    Video 9 - Curso React - Single App y ReactRouter
     </a>
 </h2>
 
@@ -313,7 +313,7 @@ Faltaba corregir los renders de ProductCategoryRow y ProductRow
 <li></li>
 <li></li>
 <li></li>
-<li></li>
+<li></li> 
 </ul>
 
 <h2>Errores</h2>
