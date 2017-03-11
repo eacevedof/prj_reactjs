@@ -1,6 +1,6 @@
 
 <!--
-\README.md 1.0.0
+\README.md 1.1.0
 -->
 <h1>Tutorial: Curso React  (codigofacilito) </h1>
 
@@ -168,13 +168,64 @@ Module not found: Error: Cannot resolve 'file' or 'directory' ./components/Fiter
 </h2>
 
 <ul>
-<li>crear carpeta /src/components</li>
+<li>Se crea un array de objetos como ejemplo de base de datos en el componente principal index.js</li>
+<li>Al ejecutar el render se pasa esta variable como propiedad "store" del componente que se va a pintar "FilterableProductTable"</li>
+<li>FilterableProductTable (en modo clase) recibe esta propiedad en su atributo props</li>
+<li>Siempre que se desee hacer código espaguetti como en php, se tiene que hacer usando los marcadores { ... }</li>
+<li>Para pintar el listado se ejecuta el metodo foreach</li>
+<li>Cada componente debe estar asociado a una única clave que se pasa en el atributo key</li>
 </ul>
 
 <h2>Errores</h2>
 <pre>
 <b>er:</b>
+Warning: flattenChildren(...): Encountered two children with the same key, `.$Sporting goods`. Child keys must be unique; when two children share a key, only the first child will be used.
+warning @ warning.js:45
+instantiateChild @ ReactChildReconciler.js:26
+traverseAllChildrenImpl @ traverseAllChildren.js:98
+traverseAllChildrenImpl @ traverseAllChildren.js:114
+traverseAllChildren @ traverseAllChildren.js:186
+instantiateChildren @ ReactChildReconciler.js:52
+_reconcilerInstantiateChildren @ ReactMultiChild.js:197
+mountChildren @ ReactMultiChild.js:232
+_createContentMarkup @ ReactDOMComponent.js:591
+mountComponent @ ReactDOMComponent.js:479
+mountComponent @ ReactReconciler.js:37
+mountComponent @ ReactCompositeComponent.js:225
+ReactCompositeComponent_mountComponent @ ReactPerf.js:66
+mountComponent @ ReactReconciler.js:37
+mountChildren @ ReactMultiChild.js:241
+_createContentMarkup @ ReactDOMComponent.js:591
+mountComponent @ ReactDOMComponent.js:479
+mountComponent @ ReactReconciler.js:37
+mountComponent @ ReactCompositeComponent.js:225
+ReactCompositeComponent_mountComponent @ ReactPerf.js:66
+mountComponent @ ReactReconciler.js:37
+mountComponent @ ReactCompositeComponent.js:225
+ReactCompositeComponent_mountComponent @ ReactPerf.js:66
+mountComponent @ ReactReconciler.js:37
+mountComponentIntoNode @ ReactMount.js:266
+perform @ Transaction.js:136
+batchedMountComponentIntoNode @ ReactMount.js:282
+perform @ Transaction.js:136
+batchedUpdates @ ReactDefaultBatchingStrategy.js:62
+batchedUpdates @ ReactUpdates.js:94
+_renderNewRootComponent @ ReactMount.js:476
+ReactMount__renderNewRootComponent @ ReactPerf.js:66
+_renderSubtreeIntoContainer @ ReactMount.js:550
+render @ ReactMount.js:570
+React_render @ ReactPerf.js:66
+(anonymous) @ index.js:23
+__webpack_require__ @ bootstrap e4075f5…:555
+fn @ bootstrap e4075f5…:86
+(anonymous) @ bootstrap e4075f5…:578
+__webpack_require__ @ bootstrap e4075f5…:555
+(anonymous) @ bootstrap e4075f5…:578
+(anonymous) @ bootstrap e4075f5…:578
+2warning.js:45 Warning: flattenChildren(...): Encountered two children with the same key, `.$Electronics`. Child keys must be unique; when two children share a key, only the first child will be used.
+
 <b>sol:</b> 
+
 </pre>
 <!------------------------------------------------------------------------------------------------------------------------------------>
 <!------------------------------------------------------------------------------------------------------------------------------------>

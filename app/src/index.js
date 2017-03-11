@@ -9,7 +9,7 @@ import ReactDOM from "react-dom"
 
 import FilterableProductTable from "./components/FilterableProductTable.js"
 
-const db = [
+let oDB = [
     {category:"Sporting goods", price:"$49.99",stocked:true, name:"Football"},
     {category:"Sporting goods", price:"$9.99",stocked:true, name:"Baseball"},
     {category:"Sporting goods", price:"29.99",stocked:false, name:"Basketball"},
@@ -19,7 +19,8 @@ const db = [
 ]
 
 const eDiv = document.getElementById("divApp")
-ReactDOM.render(<FilterableProductTable/>,eDiv)
+//pasamos la bd al componente
+ReactDOM.render(<FilterableProductTable store={oDB}/>,eDiv)
 
 
 
