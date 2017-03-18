@@ -407,10 +407,9 @@ npm WARN optional Skipping failed optional dependency /chokidar/fsevents:
 npm WARN notsup Not compatible with your operating system or architecture: fsevents@1.1.1
 npm WARN react-router@4.0.0 requires a peer of react@^15 but none was installed.
 npm WARN the_react@1.0.0 No repository field.
-<br/>
+
 <b>sol:</b>
 npm update 
-
 <h3>Resultado:</h3>
 +-- babel-core@6.24.0
 +-- babel-loader@6.4.1
@@ -421,22 +420,23 @@ npm WARN optional Skipping failed optional dependency /chokidar/fsevents:
 npm WARN notsup Not compatible with your operating system or architecture: fsevents@1.1.1
 npm WARN react-router@4.0.0 requires a peer of react@^15 but none was installed.
 npm WARN the_react@1.0.0 No repository field.
+
 <b>sol:</b>
 npm update --no-optional
 <b>--no-optional</b> Instala los paquetes "sin" las dependencias opcionales
 <h3>Resultado:</h3>
-    modified:   node_modules/jsesc/bin/jsesc
-    modified:   node_modules/jsesc/jsesc.js
-    modified:   node_modules/jsesc/man/jsesc.1
-    modified:   node_modules/jsesc/package.json
-    modified:   node_modules/source-map-support/browser-source-map-support.js
-    modified:   node_modules/source-map-support/package.json
-    modified:   node_modules/source-map-support/source-map-support.js
-    modified:   node_modules/source-map-support/test.js
-    deleted:    node_modules/source-map-support/webpack-test/compiled.js
-    deleted:    node_modules/source-map-support/webpack-test/index.html
-    deleted:    node_modules/source-map-support/webpack-test/script.js
-    deleted:    node_modules/source-map-support/webpack-test/webpack.config.js
+modified:   node_modules/jsesc/bin/jsesc
+modified:   node_modules/jsesc/jsesc.js
+modified:   node_modules/jsesc/man/jsesc.1
+modified:   node_modules/jsesc/package.json
+modified:   node_modules/source-map-support/browser-source-map-support.js
+modified:   node_modules/source-map-support/package.json
+modified:   node_modules/source-map-support/source-map-support.js
+modified:   node_modules/source-map-support/test.js
+deleted:    node_modules/source-map-support/webpack-test/compiled.js
+deleted:    node_modules/source-map-support/webpack-test/index.html
+deleted:    node_modules/source-map-support/webpack-test/script.js
+deleted:    node_modules/source-map-support/webpack-test/webpack.config.js
 </pre>
 
 <pre>
