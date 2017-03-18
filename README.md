@@ -401,6 +401,7 @@ Faltaba corregir los renders de ProductCategoryRow y ProductRow
 
 <h2>Errores</h2>
 <pre>
+Al ejecutar npm --save react-router
 <b>er:</b>
 npm WARN optional Skipping failed optional dependency /chokidar/fsevents:
 npm WARN notsup Not compatible with your operating system or architecture: fsevents@1.1.1
@@ -420,8 +421,6 @@ npm WARN optional Skipping failed optional dependency /chokidar/fsevents:
 npm WARN notsup Not compatible with your operating system or architecture: fsevents@1.1.1
 npm WARN react-router@4.0.0 requires a peer of react@^15 but none was installed.
 npm WARN the_react@1.0.0 No repository field.
-PS C:\xampp\htdocs\prj_reactjs> npm update --no-optional
-<br/>
 <b>sol:</b>
 npm update --no-optional
 <b>--no-optional</b> Instala los paquetes "sin" las dependencias opcionales
