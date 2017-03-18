@@ -405,6 +405,12 @@ Faltaba corregir los renders de ProductCategoryRow y ProductRow
 <li>
     <a href="https://youtu.be/kMhTpPG1WJM?list=PLTUC0zY59vZHMLYBospfQoNrZO-vPvVub&t=291">Store.js</li>
 </li>
+<li>
+    En conclusion, el router es un componente principal que se instanciara en el index.js, que es donde se carga la app.
+    Este componente cuenta con propiedades que le indican que otros componentes se deben cargar.
+    En este caso, nos basta con cargar el Componente padre FilterableProductTable que es el componente Tabla de productos.
+    Este ya es encargara de incluir (importar) a sus hijos: SearchBar y ProductTable
+</li>
 </ul>
 
 <h2>Errores</h2>
