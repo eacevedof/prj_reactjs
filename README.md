@@ -423,9 +423,7 @@ PS C:\xampp\htdocs\prj_reactjs> npm update --no-optional
 <b>sol:</b>
 npm update --no-optional
 <b>--no-optional</b> Instala los paquetes "sin" las dependencias opcionales
-</pre>
-<h3>Resultado</h3>
-<pre>
+<h3>Resultado:</h3>
     modified:   node_modules/jsesc/bin/jsesc
     modified:   node_modules/jsesc/jsesc.js
     modified:   node_modules/jsesc/man/jsesc.1
