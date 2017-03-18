@@ -310,16 +310,17 @@ Faltaba corregir los renders de ProductCategoryRow y ProductRow
 
 <ul>
 <li>
-    <b>Instalar React router</b>
+    <h3>Instalar React router</h3>
     <p>
-    React router ayuda a construir una app en "single page". Según las rutas hash monta el contenido en una página actualizando sus componentes
+        React router ayuda a construir una app en "single page". Según las rutas hash monta el contenido en una página 
+        actualizando sus componentes
     </p>
 </li>
 <li>
-<pre>
-    npm install -save react-router
-</pre>
-<h3>Un poco sobre <b>--save:</b></h3>
+    <pre>
+        npm install -save react-router
+    </pre>
+    <h3>Un poco sobre <b>--save:</b></h3>
     Por defecto NPM instala los paquetes dentro de node_modules.
     <pre>
         node_modules/
@@ -374,23 +375,7 @@ Faltaba corregir los renders de ProductCategoryRow y ProductRow
     ...
     </pre>
     <h3>Resultado</h3>
-    <pre>
-    ...
-    +-- UNMET PEER DEPENDENCY react@0.14.8
-    `-- react-router@4.0.0
-    +-- history@4.6.1
-    | +-- resolve-pathname@2.0.2
-    | `-- value-equal@0.2.0
-    +-- path-to-regexp@1.7.0
-    | `-- isarray@0.0.1
-    `-- warning@3.0.0
 
-    npm WARN optional Skipping failed optional dependency /chokidar/fsevents:
-    npm WARN notsup Not compatible with your operating system or architecture: fsevents@1.1.1
-    npm WARN react-router@4.0.0 requires a peer of react@^15 but none was installed.
-    npm WARN the_react@1.0.0 No repository field.
-    ...
-    </pre>
 </li>
 <li></li>
 <li></li>
