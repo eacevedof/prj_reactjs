@@ -320,7 +320,6 @@ Faltaba corregir los renders de ProductCategoryRow y ProductRow
     npm install -save react-router
 </pre>
 <h3>Un poco sobre <b>--save:</b></h3>
-<p>
     Por defecto NPM instala los paquetes dentro de node_modules.
     <pre>
         node_modules/
@@ -392,7 +391,6 @@ Faltaba corregir los renders de ProductCategoryRow y ProductRow
     npm WARN the_react@1.0.0 No repository field.
     ...
     </pre>
-</p>
 </li>
 <li></li>
 <li></li>
