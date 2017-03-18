@@ -395,8 +395,16 @@ Faltaba corregir los renders de ProductCategoryRow y ProductRow
     npm WARN the_react@1.0.0 No repository field.    
     </pre>
 </li>
-<li></li>
-<li></li> 
+<li>
+    <a href="https://youtu.be/kMhTpPG1WJM?list=PLTUC0zY59vZHMLYBospfQoNrZO-vPvVub&t=77">Actualizo index.js</a>
+</li>
+<li>
+    Se crea carpeta routes para guardar todos los archivos de rutas. Estos archivos también son componentes.<br/>
+    <a href="https://youtu.be/kMhTpPG1WJM?list=PLTUC0zY59vZHMLYBospfQoNrZO-vPvVub&t=140">Se crea archivo de rutas</a>
+</li> 
+<li>
+    <a href="https://youtu.be/kMhTpPG1WJM?list=PLTUC0zY59vZHMLYBospfQoNrZO-vPvVub&t=291">Store.js</li>
+</li>
 </ul>
 
 <h2>Errores</h2>
