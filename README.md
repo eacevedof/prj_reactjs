@@ -368,7 +368,7 @@ Faltaba corregir los renders de ProductCategoryRow y ProductRow
             "babel-preset-stage-0": "^6.3.13",
             "react": "^0.14.6",
             "react-dom": "^0.14.6",
-            "react-router": "^4.0.0", <b>&lt;--- router </b>
+            "react-router": "^4.0.0", <b>&lt;--- router incluido despues de ejecutar el comando </b>
             "webpack": "^1.12.9",
             "webpack-dev-server": "^1.14.1"
             },
@@ -376,6 +376,7 @@ Faltaba corregir los renders de ProductCategoryRow y ProductRow
     </pre>
     <h3>Resultado</h3>
     <pre>
+    ...
     +-- UNMET PEER DEPENDENCY react@0.14.8
     `-- react-router@4.0.0
     +-- history@4.6.1
@@ -389,6 +390,7 @@ Faltaba corregir los renders de ProductCategoryRow y ProductRow
     npm WARN notsup Not compatible with your operating system or architecture: fsevents@1.1.1
     npm WARN react-router@4.0.0 requires a peer of react@^15 but none was installed.
     npm WARN the_react@1.0.0 No repository field.
+    ...
     </pre>
 </p>
 </li>
