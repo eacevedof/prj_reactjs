@@ -398,6 +398,7 @@ Faltaba corregir los renders de ProductCategoryRow y ProductRow
 </ul>
 
 <h2>Errores</h2>
+<pre>
 <b>er:</b>
 npm WARN optional Skipping failed optional dependency /chokidar/fsevents:
 npm WARN notsup Not compatible with your operating system or architecture: fsevents@1.1.1
@@ -422,7 +423,7 @@ PS C:\xampp\htdocs\prj_reactjs> npm update --no-optional
 <b>sol:</b>
 npm update --no-optional
 <b>--no-optional</b> Instala los paquetes "sin" las dependencias opcionales
-
+</pre>
 <h3>Resultado</h3>
 <pre>
     modified:   node_modules/jsesc/bin/jsesc
