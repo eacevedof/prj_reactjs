@@ -445,9 +445,12 @@ deleted:    node_modules/source-map-support/webpack-test/compiled.js
 deleted:    node_modules/source-map-support/webpack-test/index.html
 deleted:    node_modules/source-map-support/webpack-test/script.js
 deleted:    node_modules/source-map-support/webpack-test/webpack.config.js
-</pre>
-
-<pre>
+<b>er:</b>
+Warning: Failed propType: Required prop `history` was not specified in `Router`
+<b>sol:</b>
+Cambiar package.json react-router a la version instalada en el video.
+Estaba instalando la version 4.0 y esta necesita react y react-dom con versiones superiores
+a las que tengo
 </pre>
 <!------------------------------------------------------------------------------------------------------------------------------------>
 <!------------------------------------------------------------------------------------------------------------------------------------>

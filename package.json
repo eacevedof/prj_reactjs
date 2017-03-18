@@ -2,6 +2,9 @@
   "name": "the_react",
   "version": "1.0.0",
   "main": "index.js",
+  "repository": {
+    
+  },
   "dependencies": {
     "babel-loader": "^6.2.0",
     "babel-plugin-add-module-exports": "^0.1.2",
@@ -13,7 +16,7 @@
     "babel-preset-stage-0": "^6.3.13",
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
-    "react-router": "^4.0.0",
+    "react-router": "^2.4.0",
     "webpack": "^1.12.9",
     "webpack-dev-server": "^1.14.1"
   },
