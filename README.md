@@ -309,8 +309,57 @@ Faltaba corregir los renders de ProductCategoryRow y ProductRow
 </h2>
 
 <ul>
-<li></li>
-<li></li>
+<li>
+    <b>Instalar React router</b>
+    <p>
+    React router ayuda a construir una app en "single page". Según las rutas hash monta el contenido en una página actualizando sus componentes
+    </p>
+</li>
+<li>
+<pre>
+    npm install -save react-router
+</pre>
+<b>--save</b>
+<p>
+    Por defecto NPM instala los paquetes dentro de node_modules.
+    <pre>
+        node_modules/
+            ...
+            async/
+                dist/
+                    async.js
+                    async.min.js
+                lib/
+                    async.js
+                CHANGELOG.md
+                LICENSE
+                package.json
+                README.md
+            ...
+            babel-core/
+                lib/
+                node_modules/
+                    source-map/
+                        dist/
+                        lib/
+                        CHANGELOG.md
+                        LICENSE
+                        package.json
+                        README.md
+                        source-map.js
+                index.js
+                package.json
+                README.md
+                register.js
+    </pre>
+    <i>save<i> le indica a NPM que incluya el paquete dentro de la seccion de dependencias en tu archivo <b>package.json</b>
+    de forma automática.  Evitando que lo tengas que hacer a mano.
+    Un ejemplo de pakage.json
+    <pre>
+    </pre>
+
+</p>
+</li>
 <li></li>
 <li></li>
 <li></li> 
