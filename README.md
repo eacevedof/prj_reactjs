@@ -319,7 +319,7 @@ Faltaba corregir los renders de ProductCategoryRow y ProductRow
 <pre>
     npm install -save react-router
 </pre>
-<b>--save</b>
+<h3>Un poco sobre <b>--save:</b></h3>
 <p>
     Por defecto NPM instala los paquetes dentro de node_modules.
     <pre>
@@ -352,7 +352,7 @@ Faltaba corregir los renders de ProductCategoryRow y ProductRow
                 README.md
                 register.js
     </pre>
-    <i>save<i> le indica a NPM que incluya el paquete dentro de la seccion de dependencias en tu archivo <b>package.json</b>
+    <i>save</i> le indica a NPM que incluya el paquete dentro de la seccion de dependencias en tu archivo <b>package.json</b>
     de forma automática.  Evitando que lo tengas que hacer a mano.
     Un ejemplo de pakage.json
     <pre>
@@ -368,7 +368,7 @@ Faltaba corregir los renders de ProductCategoryRow y ProductRow
             "babel-preset-stage-0": "^6.3.13",
             "react": "^0.14.6",
             "react-dom": "^0.14.6",
-            "react-router": "^4.0.0", <b><--- router</b>
+            "react-router": "^4.0.0", <b>&lt;--- router </b>
             "webpack": "^1.12.9",
             "webpack-dev-server": "^1.14.1"
             },
@@ -388,7 +388,7 @@ Faltaba corregir los renders de ProductCategoryRow y ProductRow
     npm WARN optional Skipping failed optional dependency /chokidar/fsevents:
     npm WARN notsup Not compatible with your operating system or architecture: fsevents@1.1.1
     npm WARN react-router@4.0.0 requires a peer of react@^15 but none was installed.
-    npm WARN the_react@1.0.0 No repository field.    
+    npm WARN the_react@1.0.0 No repository field.
     </pre>
 </p>
 </li>
