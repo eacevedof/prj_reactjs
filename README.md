@@ -387,13 +387,13 @@ Faltaba corregir los renders de ProductCategoryRow y ProductRow
     +-- path-to-regexp@1.7.0
     | `-- isarray@0.0.1
     `-- warning@3.0.0
+    </pre>
 
     npm WARN optional Skipping failed optional dependency /chokidar/fsevents:
     npm WARN notsup Not compatible with your operating system or architecture: fsevents@1.1.1
     npm WARN react-router@4.0.0 requires a peer of react@^15 but none was installed.
     npm WARN the_react@1.0.0 No repository field.
     ...
-    </pre>
 </li>
 <li></li>
 <li></li> 
