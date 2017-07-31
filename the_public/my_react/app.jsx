@@ -1,21 +1,13 @@
-//app.js 1.0.5
+//app.js 1.0.6
 //https://youtu.be/4gAAiOKOwio?t=880
-console.log("app.js 1.0.5")
+console.log("app.js 1.0.6")
 
-//Esto es javascript 
-/*
-const oElement = React.createElement(
-  "h1",
-  {id:"title"},
-  "Hola ",
-  React.createElement("span",null,"mundo")
-)
-*/
+const oDivApp = document.getElementById("app")
 
-//Esto es jsx
-const oElement = (
-  <h1 id="title" className="mi-clase-titulo">
-    Hola {2+5} <span>mundo</span>
-  </h1>
-)
-ReactDOM.render(oElement,document.getElementById("app"))
+//Ejemplo reloj
+function reloj(){
+  const sTime = new Date().toLocaleTimeString()
+  oDivApp.textContent = sTime
+}
+
+setInterval(reloj,1000)
