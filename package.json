@@ -1,0 +1,24 @@
+{
+  "name": "prj_reactjs",
+  "version": "1.0.0",
+  "description": "Tutorial Edteam",
+  "main": "index.html",
+  "dependencies": {
+    "connect": "^3.6.2",
+    "serve-static": "^1.12.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eacevedof/prj_reactjs/tree/edteam"
+  },
+  "author": "Eduardo A.F",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eacevedof/prj_reactjs/issues"
+  },
+  "homepage": "https://github.com/eacevedof/prj_reactjs#readme"
+}
