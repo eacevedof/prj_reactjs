@@ -4,6 +4,7 @@
   "description": "Tutorial Edteam",
   "main": "index.html",
   "dependencies": {
+    "babel": "^6.23.0",
     "connect": "^3.6.2",
     "serve-static": "^1.12.3"
   },
