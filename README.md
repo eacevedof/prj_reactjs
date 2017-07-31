@@ -12,9 +12,9 @@ Minicurso de React.js (1) - Introducción a React y JSX
 </h2>
 <ul>
     <ol>    
-        <a href="https://www.youtube.com/watch?v=4gAAiOKOwio">Introducción a React y JSX</a>
+        <a href="https://www.youtube.com/watch?v=4gAAiOKOwio">1 - Introducción a React y JSX</a>
     </ol>
     <ol>
-        <a href="https://www.youtube.com/watch?v=ld8pG4RPAeI">Componentes y propiedades</a>        
+        <a href="https://www.youtube.com/watch?v=ld8pG4RPAeI">2 - Componentes y propiedades</a>        
     </ol>
 </ul>
