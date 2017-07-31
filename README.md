@@ -18,3 +18,7 @@ Minicurso de React.js (1) - Introducción a React y JSX
         <a href="https://www.youtube.com/watch?v=ld8pG4RPAeI">2 - Componentes y propiedades</a>
     </ol>
 </ul>
+
+<p>
+node .\the_application\server.js<br/>
+</p>
