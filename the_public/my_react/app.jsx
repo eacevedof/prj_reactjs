@@ -1,21 +1,12 @@
-//app.js 1.0.1
-console.log("app.js 1.0.1")
+//app.js 1.0.2
+//https://youtu.be/4gAAiOKOwio?t=880
+console.log("app.js 1.0.2")
 
-function formatName(user) {
-  return user.firstName + ' ' + user.lastName;
-}
+const oElement = React.createElement(
+  "h1",
+  {id:"title"},
+  "Hola ",
+  React.createElement("span",null,"mundo")
+)
 
-const user = {
-firstName: 'App.js',
-lastName: '1.0.1'
-};
-const element = (
-<h1>
-    Hello, {formatName(user)}!
-</h1>
-);
-
-ReactDOM.render(
-element,
-document.getElementById('app')
-);
+ReactDOM.render(oElement,document.getElementById("app"));
