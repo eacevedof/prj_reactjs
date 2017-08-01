@@ -1,14 +1,12 @@
-//app.js 1.0.7
-//https://youtu.be/4gAAiOKOwio?t=880
-console.log("app.js 1.0.7")
+//app.js 1.0.8
+//https://youtu.be/ld8pG4RPAeI?t=212
+console.log("app.js 1.0.8")
 
 const oDivApp = document.getElementById("app")
 
-//Ejemplo reloj
-function reloj(){
-  const sTime = new Date().toLocaleTimeString()
-  const eSpan = <span>{sTime}</span>
-  ReactDOM.render(eSpan,oDivApp)
+function Saludar(oProps){
+  return <h1>Hola {oProps.name}</h1>
 }
 
-setInterval(reloj,1000)
+ReactDOM.render(<Saludar name="Eduardo A.F." />,oDivApp)
+
