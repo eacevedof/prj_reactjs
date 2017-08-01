@@ -4,15 +4,19 @@ console.log("app.js 1.0.8")
 
 const oDivApp = document.getElementById("app")
 
-function Saludar(oProps){
-  return <h1>Hola {oProps.name}</h1>
+const User = oProps =>{
+  return (
+    <div>
+      <img src="{oProps.img}" alt="{oProps.name}"/>
+      <p>{oProps.name}</p>
+    </div>
+  )
 }
 
 ReactDOM.render(
   <div>
-    <Saludar name="Saludo uno" />
-    <Saludar name="Eduardo A.F." />
-    <Saludar name="Tres" />
+    <User img="https://s-media-cache-ak0.pinimg.com/originals/00/26/55/002655228ae3e174897bff8980cd50b0.jpg"
+    name="Mario Bros"/>
   </div>,
   oDivApp
 )
