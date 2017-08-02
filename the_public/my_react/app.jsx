@@ -1,13 +1,13 @@
 //app.js 1.0.9
-//https://youtu.be/ld8pG4RPAeI?t=212
-console.log("app.js 1.0.8")
+//https://youtu.be/ld8pG4RPAeI?t=353
+console.log("app.js 1.0.9")
 
 const oDivApp = document.getElementById("app")
 
 const User = oProps =>{
   return (
     <div>
-      <img src="{oProps.img}" alt="{oProps.name}"/>
+      <img src={oProps.img} alt={oProps.name} width="100" height="100"/>
       <p>{oProps.name}</p>
     </div>
   )
