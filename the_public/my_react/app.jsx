@@ -5,13 +5,13 @@ console.log("app.js 1.0.10")
 
 const oDivApp = document.getElementById("app")
 
-const Avatar = oProps => <img src={oProps.user.img} alt={oProps.user.name} width="100" height="100"/>
-const UserName = oProps => <p>{oProps.user.name}</p>
+const Avatar = oProps => <img src={oProps.oUser.img} alt={oProps.oUser.name} width="100" height="100"/>
+const UserName = oProps => <p>{oProps.oUser.name}</p>
 const User = oProps => {
   return(
     <div className="user-item">
-      <Avatar user={oProps.user} />
-      <UserName user={oProps.user} />
+      <Avatar oUser={oProps.oUser} />
+      <UserName oUser={oProps.oUser} />
     </div>
   )
 }
@@ -22,5 +22,5 @@ const oModelUser = {
 }
 
 
-ReactDOM.render(<User user={oModelUser}/>,oDivApp)
+ReactDOM.render(<User oUser={oModelUser}/>,oDivApp)
 
