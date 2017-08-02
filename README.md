@@ -19,6 +19,7 @@ Minicurso de React.js (1) - Introducción a React y JSX
     </ol>
 </ul>
 
-<p>
+```js
+//Ejecutar
 node .\the_application\server.js<br/>
-</p>
+```
