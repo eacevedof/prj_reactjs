@@ -22,5 +22,5 @@ https://github.com/eacevedof/prj_reactjs/tree/edteam
 
 ```js
 //Ejecutar
-node .\the_application\server.js<br/>
+node .\the_application\server.js
 ```
