@@ -2,6 +2,7 @@
 <!--
 README.md branch edteam 1.0.0
 Minicurso de React.js (1) - Introducción a React y JSX 
+https://github.com/eacevedof/prj_reactjs/tree/edteam
 -->
 <h1>
     <a href="https://github.com/eacevedof/prj_reactjs/tree/edteam">Branch - Edteam</a>
