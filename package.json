@@ -9,6 +9,8 @@
     "connect": "^3.6.2",
     "css-loader": "^0.28.4",
     "eslint": "^4.3.0",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
     "serve-static": "^1.12.3",
     "webpack": "^3.4.1"
   },
