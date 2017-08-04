@@ -1,4 +1,4 @@
-//app.js 1.0.14
+//app.jsx 1.0.14
 //https://github.com/eacevedof/prj_reactjs/blob/edteam/the_public/my_react/app.jsx
 //https://youtu.be/ld8pG4RPAeI?t=1066
 //da error: Uncaught ReferenceError: require is not defined
