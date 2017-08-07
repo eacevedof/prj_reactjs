@@ -33,7 +33,7 @@ node .\the_application\my_modules\server.js
 
 <b>Error:</b>
 
-'''
+```
 app.jsx:8 Uncaught TypeError: Cannot read property 'saludo' of undefined
     at Hello.render (<anonymous>:26:28)
     at react-dom.js:5257
@@ -45,11 +45,11 @@ app.jsx:8 Uncaught TypeError: Cannot read property 'saludo' of undefined
     at Object.mountComponent (react-dom.js:11551)
     at ReactCompositeComponentWrapper.performInitialMount (react-dom.js:4832)
     at ReactCompositeComponentWrapper.mountComponent (react-dom.js:4719)
-'''
+```
 
 <b>solución:</b>
 
-'''
+```
 El error era esto: <h1>{this.oProps.saludo}</h1> se debia cambiar por 
 <h1>{this.props.saludo}</h1>
-'''
+```
