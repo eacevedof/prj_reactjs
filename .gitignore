@@ -2,8 +2,6 @@
 # -- logs
 logs/**
 php.ini
-the_public/js/the_application/**
-the_public/js/the_framework/**
 
 # -- Composer -----------------------------------------
 composer.phar
@@ -53,7 +51,7 @@ tmtags
 nbproject/private/
 build/
 nbbuild/
-dist/
+# dist/
 nbdist/
 nbactions.xml
 nb-configuration.xml
