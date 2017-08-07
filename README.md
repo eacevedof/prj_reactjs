@@ -50,4 +50,6 @@ app.jsx:8 Uncaught TypeError: Cannot read property 'saludo' of undefined
 <b>solución:</b>
 
 '''
+El error era esto: <h1>{this.oProps.saludo}</h1> se debia cambiar por 
+<h1>{this.props.saludo}</h1>
 '''
