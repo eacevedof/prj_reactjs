@@ -58,4 +58,6 @@ npm yarn init
 
 yarn add webpack --dev
 
+configuro webpack.config.js
+
 ```
