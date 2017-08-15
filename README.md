@@ -51,6 +51,11 @@ https://www.youtube.com/watch?v=RZNNu2pO49g
 
 ```
 npm init
+
 npm install --save-dev yarn  #se instala yarn 0.27.5
+
+npm yarn init 
+
+yarn add webpack --dev
 
 ```
