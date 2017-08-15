@@ -46,3 +46,11 @@ https://www.youtube.com/watch?v=RZNNu2pO49g
         <a href="https://www.youtube.com/watch?v=h7dFY-8XNxY">Curso Avanzado de React - 11. Probando los Action Creators</a>
     </ol>
 </ul>
+
+<h2>Acciones</h2>
+
+```
+npm init
+npm install --save-dev yarn  #se instala yarn 0.27.5
+
+```

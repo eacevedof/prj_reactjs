@@ -1,0 +1,26 @@
+{
+  "name": "prj_reactjs",
+  "version": "1.0.0",
+  "description": "Makeitreal - Curso Avanzado React Redux (11 videos)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eacevedof/prj_reactjs/tree/makeitreal"
+  },
+  "keywords": [
+    "React",
+    "Redux",
+    "Make",
+    "it",
+    "Real",
+    "Tutorial"
+  ],
+  "author": "Eduardo A. F.",
+  "license": "MIT",
+  "devDependencies": {
+    "yarn": "^0.27.5"
+  }
+}
