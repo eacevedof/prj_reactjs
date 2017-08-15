@@ -60,4 +60,6 @@ yarn add webpack --dev
 
 configuro webpack.config.js
 
+yarn add babel-loader babel-core babel-preset-env --dev
+
 ```
