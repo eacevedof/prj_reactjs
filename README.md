@@ -7,7 +7,7 @@ https://www.youtube.com/watch?v=RZNNu2pO49g
 <h1>
     <a href="https://github.com/eacevedof/prj_reactjs/tree/makeitreal">Branch - Make it Real (makeitreal) REDUX</a>
 </h1>
-    <a href="">Repo original</a>
+    <a href="https://github.com/makeitrealcamp/redux-example/blob/master/package.json">Repo original</a>
 <h2>
     
 </h2>
@@ -66,4 +66,32 @@ yarn add babel-loader babel-core babel-preset-env --dev
 
 yarn add react react-dom --dev
 
+yarn add react-scripts --dev
+
+yarn add react
+
+yarn add react-dom
+
+yarn add readt-bootstrap
 ```
+
+Ejemplo repo original package.json
+{
+  "name": "redux-example",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "react-scripts": "0.8.5"
+  },
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-bootstrap": "^0.30.7",
+    "react-dom": "^15.4.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
