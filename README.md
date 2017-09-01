@@ -62,4 +62,8 @@ configuro webpack.config.js
 
 yarn add babel-loader babel-core babel-preset-env --dev
 
+# falta este paso: configurado babel-loader en webpack.config.js en config.module.rules[0].loader
+
+yarn add react react-dom --dev
+
 ```
