@@ -66,6 +66,12 @@ yarn add babel-loader babel-core babel-preset-env --dev
 
 yarn add react react-dom --dev
 
+# https://github.com/facebookincubator/create-react-app/tree/master/packages/react-script
+# react-scripts es un paquete de create-react-app intenta automatizar el arranque
+# react-scripts obliga a tener la estructura que genera create-react-app
+# yarn start arranca un servidor
+# yarn test lanza los scripts en modo debug
+# yarn run build genera scripts para produccion
 yarn add react-scripts --dev
 
 yarn add react
@@ -74,6 +80,11 @@ yarn add react-dom
 
 #https://react-bootstrap.github.io/introduction.html
 yarn add react-bootstrap #libreria para instalar componentes react para twitter bootstrap
+
+configuro package.json.scripts con los scripts de create-react-app
+
+yarn start
+
 ```
 
 ```
