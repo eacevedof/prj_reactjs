@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Glyphicon } from 'react-bootstrap';
+import store from "../store"
 
 const styles = {
   products: {
@@ -25,8 +26,8 @@ class ProductList extends Component {
         { id: 2, name: "On Motion Live", price: 99, image: "https://s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-2.jpg" },
         { id: 3, name: "Underground Max", price: 149, image: "https://s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-3.jpg" },
       ]
-    }
-  }
+    }//this.state
+  }//constructor
 
   render() {
     return (
@@ -43,12 +44,16 @@ class ProductList extends Component {
           </div>
         )}
       </div>
-    );
-  }
+    )//return
+  }//render
 
-  addToCart(product) {
+  addToCart(oProduct) {
+    store.dispatch({
+      type: "ADD_TO_CART",
+      product: oProduct
+    })
+  }//addToCart
 
-  }
-}
+}//ProductList
 
 export default ProductList;

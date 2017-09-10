@@ -81,6 +81,8 @@ yarn add react-dom
 #https://react-bootstrap.github.io/introduction.html
 yarn add react-bootstrap #libreria para instalar componentes react para twitter bootstrap
 
+yarn add redux
+
 configuro package.json.scripts con los scripts de create-react-app
 
 yarn start

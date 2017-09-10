@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Panel, Table, Button, Glyphicon } from 'react-bootstrap';
+import { store } from "../store"
 
 const styles = {
   footer: {
@@ -15,8 +16,14 @@ class ShoppingCart extends Component {
 
     this.state = {
       cart: []
-    }
-  }
+    }//this.state
+
+    store.subscribe(()=>{
+      this.setState({
+        cart: store.getState().cart
+      })//this.setState
+    })//store.subscribe
+  }//constructor
 
   render() {
     return (
@@ -41,12 +48,13 @@ class ShoppingCart extends Component {
         </Table>
 
       </Panel>
-    )
-  }
+    )//return
+  }//render
 
   removeFromCart(product) {
 
-  }
-}
+  }//removeFromCart
+
+}//ShoppingCart
 
 export default ShoppingCart;
