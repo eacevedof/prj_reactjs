@@ -72,9 +72,11 @@ yarn add react
 
 yarn add react-dom
 
-yarn add readt-bootstrap
+#https://react-bootstrap.github.io/introduction.html
+yarn add react-bootstrap #libreria para instalar componentes react para twitter bootstrap
 ```
 
+```
 Ejemplo repo original package.json
 {
   "name": "redux-example",
@@ -95,3 +97,4 @@ Ejemplo repo original package.json
     "eject": "react-scripts eject"
   }
 }
+```
