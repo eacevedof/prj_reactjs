@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Panel, Table, Button, Glyphicon } from 'react-bootstrap';
-import { store } from "../store"
+import store from "../store"
 
 const styles = {
   footer: {
