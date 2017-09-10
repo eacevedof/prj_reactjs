@@ -57,7 +57,11 @@ class ShoppingCart extends Component {
   }//render
 
   removeFromCart(oProduct){
-    console.log("removeFromCart",oProduct)
+    let oAction = {
+      type: "REMOVE_FROM_CART",
+      product: oProduct
+    }
+    oStore.dispatch(oAction)
   }//removeFromCart
 
 }//ShoppingCart

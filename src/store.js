@@ -1,8 +1,9 @@
 import { createStore } from "redux";
 
+//la funcion reductora devolvera un nuevo estado
 const fnReducer = (oState,oAction)=>{
-    console.log("fnReducer")
-    //console.log("oState",oState)
+    console.log("fnReducer.oAction.type",oAction.type)
+    console.log("fnReducer.oState",oState)
     //console.log("...oState",...oState)
     if(oAction.type === "ADD_TO_CART")
     {
@@ -13,13 +14,15 @@ const fnReducer = (oState,oAction)=>{
     }
     else if(oAction.type === "REMOVE_FROM_CART")
     {
+        console.log("fnReducer.REMOVE_FORM_CART")
         return {
             ...oState,
-            arCart: oState.arCart.filter((oProduct)=>{oProduct.id !== oState.product.id})
+            arCart: oState.arCart.filter((oProduct)=>oProduct.id !== oAction.product.id)
         }
     }
     return oState;
 }//fnReducer
 
-//create
-export default createStore(fnReducer,{arCart:[]});
+//exporta un objeto oStore. La función reductora estara a la escucha de los cambios de estado para actualizarlos.
+//se inicializa con un estado inicial vacio arCart:[]
+export default createStore(fnReducer, { arCart:[] });

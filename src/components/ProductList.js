@@ -20,7 +20,7 @@ class ProductList extends Component {
     console.log("new ProductList()")
     super();
     this.addToCart = this.addToCart.bind(this);
-
+    //this.removeFromCart = this.removeFromCart.bind(this)
     this.state = {
       products: [
         { id: 1, name: "Hipster Ultimate", price: 299, image: "https://s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-1.jpg" },
@@ -39,7 +39,9 @@ class ProductList extends Component {
             <div className="caption">
               <h4>{product.name}</h4>
               <p>
-                <Button bsStyle="primary" onClick={() => this.addToCart(product)} role="button" disabled={product.inventory <= 0}>${product.price} <Glyphicon glyph="shopping-cart" /></Button>
+                <Button bsStyle="primary" onClick={() => this.addToCart(product)} role="button" disabled={product.inventory <= 0}>
+                  ${product.price} <Glyphicon glyph="shopping-cart" />
+                </Button>
               </p>
             </div>
           </div>
@@ -54,13 +56,6 @@ class ProductList extends Component {
       product: oProduct
     })
   }//addToCart
-
-  removeFromCart(oProduct){
-    oStore.dispatch({
-      type: "REMOVE_FROM_CART",
-      product: oProduct
-    })
-  }//removeFromCart
 
 }//ProductList
 
