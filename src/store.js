@@ -1,5 +1,17 @@
 import { createStore } from "redux";
 
+const addToCart = (oState,oAction)=>{return  {
+    ...oState,
+    arCart: oState.arCart.concat(oAction.product)
+}}//addToCart
+
+const removeFromCart = (oState,oAction)=>{
+    return {
+        ...oState,
+        arCart: oState.arCart.filter((oProduct)=>oProduct.id !== oAction.product.id)
+    }
+}//removeFromCart
+
 //la funcion reductora devolvera un nuevo estado
 const fnReducer = (oState,oAction)=>{
     console.log("fnReducer.oAction.type",oAction.type)
@@ -7,18 +19,11 @@ const fnReducer = (oState,oAction)=>{
     //console.log("...oState",...oState)
     if(oAction.type === "ADD_TO_CART")
     {
-        return {
-            ...oState,
-            arCart: oState.arCart.concat(oAction.product)
-        }
+        return addToCart(oState,oAction)
     }
     else if(oAction.type === "REMOVE_FROM_CART")
     {
-        console.log("fnReducer.REMOVE_FORM_CART")
-        return {
-            ...oState,
-            arCart: oState.arCart.filter((oProduct)=>oProduct.id !== oAction.product.id)
-        }
+        return removeFromCart(oState,oAction)
     }
     return oState;
 }//fnReducer
