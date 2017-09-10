@@ -86,6 +86,8 @@ yarn add redux
 
 configuro package.json.scripts con los scripts de create-react-app
 
+yarn global add eslint --prefix /usr/local
+
 yarn start
 
 ```
