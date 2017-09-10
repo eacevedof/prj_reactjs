@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import { Panel, Table, Button, Glyphicon } from 'react-bootstrap';
-import store from "../store"
+import oStore from "../store"
 
-const styles = {
+const oStyles = {
   footer: {
     fontWeight: 'bold'
   }
-}
-
+}//oStyles
 
 class ShoppingCart extends Component {
   constructor() {
@@ -15,14 +14,16 @@ class ShoppingCart extends Component {
     this.removeFromCart = this.removeFromCart.bind(this);
 
     this.state = {
-      cart: []
+      arCart: []
     }//this.state
 
-    store.subscribe(()=>{
+    oStore.subscribe(()=>{
+      console.log("oStore.subscribe.callback")
       this.setState({
-        cart: store.getState().cart
+        arCart: oStore.getState().arCart
       })//this.setState
     })//store.subscribe
+
   }//constructor
 
   render() {
@@ -30,18 +31,22 @@ class ShoppingCart extends Component {
       <Panel header="Shopping Cart">
         <Table fill>
           <tbody>
-            {this.state.cart.map(product =>
+            {this.state.arCart.map(product =>
               <tr key={product.id}>
                 <td>{product.name}</td>
                 <td className="text-right">${product.price}</td>
-                <td className="text-right"><Button bsSize="xsmall" bsStyle="danger" onClick={() => this.removeFromCart(product)}><Glyphicon glyph="trash" /></Button></td>
+                <td className="text-right">
+                  <Button bsSize="xsmall" bsStyle="danger" onClick={() => this.removeFromCart(product)}>
+                    <Glyphicon glyph="trash" />
+                  </Button>
+                </td>
               </tr>
             )}
           </tbody>
           <tfoot>
             <tr>
-              <td colSpan="4" style={styles.footer}>
-                Total: ${this.state.cart.reduce((sum, product) => sum + product.price, 0)}
+              <td colSpan="4" style={oStyles.footer}>
+                Total: ${this.state.arCart.reduce((sum, product) => sum + product.price, 0)}
               </td>
             </tr>
           </tfoot>
@@ -51,8 +56,8 @@ class ShoppingCart extends Component {
     )//return
   }//render
 
-  removeFromCart(product) {
-
+  removeFromCart(oProduct){
+    console.log("removeFromCart",oProduct)
   }//removeFromCart
 
 }//ShoppingCart

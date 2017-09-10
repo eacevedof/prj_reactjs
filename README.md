@@ -72,6 +72,7 @@ yarn add react react-dom --dev
 # yarn start arranca un servidor
 # yarn test lanza los scripts en modo debug
 # yarn run build genera scripts para produccion
+# configura webpackHotDevClient?
 yarn add react-scripts --dev
 
 yarn add react

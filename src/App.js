@@ -27,8 +27,8 @@ class App extends Component {
           </Row>
         </Grid>
       </div>
-    );
-  }
-}
+    ) //return
+  }//render
+}//App
 
 export default App;

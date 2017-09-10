@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Glyphicon } from 'react-bootstrap';
-import store from "../store"
+import oStore from "../store"
 
 const styles = {
   products: {
@@ -17,6 +17,7 @@ const styles = {
 
 class ProductList extends Component {
   constructor() {
+    console.log("new ProductList()")
     super();
     this.addToCart = this.addToCart.bind(this);
 
@@ -48,11 +49,18 @@ class ProductList extends Component {
   }//render
 
   addToCart(oProduct) {
-    store.dispatch({
+    oStore.dispatch({
       type: "ADD_TO_CART",
       product: oProduct
     })
   }//addToCart
+
+  removeFromCart(oProduct){
+    oStore.dispatch({
+      type: "REMOVE_FROM_CART",
+      product: oProduct
+    })
+  }//removeFromCart
 
 }//ProductList
 
