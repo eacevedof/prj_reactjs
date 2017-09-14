@@ -88,6 +88,9 @@ configuro package.json.scripts con los scripts de create-react-app
 
 yarn global add eslint --prefix /usr/local
 
+#en caso de hacer el pull en otro servidor
+yarn install --check-files
+
 yarn start
 
 ```
