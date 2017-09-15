@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Glyphicon } from 'react-bootstrap';
 import oStore from "../store"
+import {addToCart} from "../actionCreators"
 
 const styles = {
     products: {
@@ -52,10 +53,7 @@ class ProductList extends Component {
     }//render
 
     addToCart(oProduct) {
-        oStore.dispatch({
-            type: "ADD_TO_CART",
-            product: oProduct
-        })
+        oStore.dispatch(addToCart(oProduct))
     }//addToCart
 
 }//ProductList

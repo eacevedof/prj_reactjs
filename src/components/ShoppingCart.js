@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Panel, Table, Button, Glyphicon } from 'react-bootstrap';
 import oStore from "../store"
+import {removeFromCart} from "../actionCreators"
 
 const oStyles = {
     footer: {
@@ -57,11 +58,8 @@ class ShoppingCart extends Component {
 
     //la intención es gestionar esto con action creators
     removeFromCart(oProduct){
-        let oAction = {
-            type: "REMOVE_FROM_CART",
-            product: oProduct
-        }
-        oStore.dispatch(oAction)
+        //addToCart es una accion pasada por action creators
+        oStore.dispatch(removeFromCart(oProduct))
     }//removeFromCart
 
 }//ShoppingCart
