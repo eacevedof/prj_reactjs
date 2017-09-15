@@ -14,17 +14,18 @@ const oStyles = {
 class ShoppingCart extends Component {
     
     render() {
+        
         console.log("ShoppingCart.render")
         return (
             <Panel header="Shopping Cart">
                 <Table fill>
                     <tbody>
-                      {this.props.arCart.map(product =>
-                        <tr key={product.id}>
-                            <td>{product.name}</td>
-                            <td className="text-right">${product.price}</td>
+                      {this.props.arCart.map(oProduct =>
+                        <tr key={oProduct.id}>
+                            <td>{oProduct.name}</td>
+                            <td className="text-right">${oProduct.price}</td>
                             <td className="text-right">
-                                <Button bsSize="xsmall" bsStyle="danger" onClick={() => this.props.removeFromCart(product)}>
+                                <Button bsSize="xsmall" bsStyle="danger" onClick={() => this.props.removeFromCart(oProduct)}>
                                     <Glyphicon glyph="trash" />
                                 </Button>
                             </td>
@@ -34,7 +35,7 @@ class ShoppingCart extends Component {
                     <tfoot>
                         <tr>
                             <td colSpan="4" style={oStyles.footer}>
-                              Total: ${this.props.arCart.reduce((sum, product) => sum + product.price, 0)}
+                              Total: ${this.props.arCart.reduce((sum,oProduct) => sum + oProduct.price, 0)}
                             </td>
                         </tr>
                     </tfoot>
@@ -53,12 +54,13 @@ const mapStateToProps = oState => {
 }//mapStateToProps
 
 const mapDispatchToProps = fnDispatch => {
+    
     return {
         removeFromCart(oProduct){
             //removeFromCart: ActionCreator
             fnDispatch(acRemoveFromCart(oProduct))
         }//removeFromCart        
     }
-}
+}//mapDispatchToProps
 
 export default connect(mapStateToProps,mapDispatchToProps)(ShoppingCart);

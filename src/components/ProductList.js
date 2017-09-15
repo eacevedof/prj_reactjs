@@ -23,27 +23,27 @@ class ProductList extends Component {
     constructor() {
         console.log("new ProductList()")
         super();
+        console.log("this:",this) //es el objeto ProductList        
         //this.addToCart.bind(this) hace que se remplace el "this" por el objeto vinculado
         //en este caso otro "this"
         //creo que se hace este bind para que se pueda renderizar sino en el render no se contaria con 
         //addToCart
-        console.log("this:",this)
-        this.addToCart = this.addToCart.bind(this);
-        //this.removeFromCart = this.removeFromCart.bind(this)
-        this.state = {
+        //this.addToCart = this.addToCart.bind(this) ?? con esto comentado sigue funcionando
+
+        this.oState = {
             arProducts: [
                 { id: 1, name: "Hipster Ultimate", price: 299, image: "https://s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-1_.jpg" },
                 { id: 2, name: "On Motion Live", price: 99, image: "https://s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-2_.jpg" },
                 { id: 3, name: "Underground Max", price: 149, image: "https://s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-3_.jpg" },
             ]
-        }//this.state
+        }//this.oState
     }//constructor
 
     render() {
         console.log("ProductList.render()")
         return (
             <div style={oStyles.products}>
-                {this.state.arProducts.map(oProduct =>
+                {this.oState.arProducts.map(oProduct =>
                     <div className="thumbnail" style={oStyles.product} key={oProduct.id}>
                         <img src={oProduct.image} alt={oProduct.name} />
                         <div className="caption">
