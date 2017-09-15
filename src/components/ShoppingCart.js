@@ -58,8 +58,9 @@ const mapDispatchToProps = fnDispatch => {
     return {
         removeFromCart(oProduct){
             //removeFromCart: ActionCreator
-            fnDispatch(acRemoveFromCart(oProduct))
-        }//removeFromCart        
+            let oAction = acRemoveFromCart(oProduct)
+            fnDispatch(oAction)
+        }//removeFromCart 
     }
 }//mapDispatchToProps
 
