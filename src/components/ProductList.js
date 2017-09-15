@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Button, Glyphicon } from 'react-bootstrap';
 import oStore from "../store"
-import {addToCart} from "../actionCreators"
+import {acAddToCart} from "../actionCreators"
 
-const styles = {
+console.log("ProductList.js")
+
+const oStyles = {
     products: {
         display: 'flex',
         alignItems: 'stretch',
@@ -14,35 +16,41 @@ const styles = {
         marginLeft: 10,
         marginRight: 10
     }
-}
+}//oStyles
 
 class ProductList extends Component {
     
     constructor() {
         console.log("new ProductList()")
         super();
+        //this.addToCart.bind(this) hace que se remplace el "this" por el objeto vinculado
+        //en este caso otro "this"
+        //creo que se hace este bind para que se pueda renderizar sino en el render no se contaria con 
+        //addToCart
+        console.log("this:",this)
         this.addToCart = this.addToCart.bind(this);
         //this.removeFromCart = this.removeFromCart.bind(this)
         this.state = {
-            products: [
-                { id: 1, name: "Hipster Ultimate", price: 299, image: "https://s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-1.jpg" },
-                { id: 2, name: "On Motion Live", price: 99, image: "https://s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-2.jpg" },
-                { id: 3, name: "Underground Max", price: 149, image: "https://s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-3.jpg" },
+            arProducts: [
+                { id: 1, name: "Hipster Ultimate", price: 299, image: "https://s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-1_.jpg" },
+                { id: 2, name: "On Motion Live", price: 99, image: "https://s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-2_.jpg" },
+                { id: 3, name: "Underground Max", price: 149, image: "https://s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-3_.jpg" },
             ]
         }//this.state
     }//constructor
 
     render() {
+        console.log("ProductList.render()")
         return (
-            <div style={styles.products}>
-                {this.state.products.map(product =>
-                    <div className="thumbnail" style={styles.product} key={product.id}>
-                        <img src={product.image} alt={product.name} />
+            <div style={oStyles.products}>
+                {this.state.arProducts.map(oProduct =>
+                    <div className="thumbnail" style={oStyles.product} key={oProduct.id}>
+                        <img src={oProduct.image} alt={oProduct.name} />
                         <div className="caption">
-                            <h4>{product.name}</h4>
+                            <h4>{oProduct.name}</h4>
                             <p>
-                                <Button bsStyle="primary" onClick={() => this.addToCart(product)} role="button" disabled={product.inventory <= 0}>
-                                  ${product.price} <Glyphicon glyph="shopping-cart" />
+                                <Button bsStyle="primary" onClick={() => this.addToCart(oProduct)} role="button" disabled={oProduct.inventory <= 0}>
+                                    ${oProduct.price} <Glyphicon glyph="shopping-cart" />
                                 </Button>
                             </p>
                         </div>
@@ -53,7 +61,9 @@ class ProductList extends Component {
     }//render
 
     addToCart(oProduct) {
-        oStore.dispatch(addToCart(oProduct))
+        console.log("addToCart launched","oProduct",oProduct)
+        let oAction = acAddToCart(oProduct)
+        oStore.dispatch(oAction)
     }//addToCart
 
 }//ProductList

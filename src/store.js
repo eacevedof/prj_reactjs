@@ -1,5 +1,7 @@
 import { createStore } from "redux";
 
+console.log("store.js")
+
 const addToCart = (oState,oAction)=>{return  {
     ...oState,
     arCart: oState.arCart.concat(oAction.product)

@@ -5,10 +5,12 @@ import './index.css';
 import store from "./store";
 import {Provider} from "react-redux"
 
+console.log("inicio index.js")
+
 ReactDOM.render(
-        
     <Provider store={store}>
         <App />
     </Provider>,
-    document.getElementById('root')
+    document.getElementById("root")
 );
+console.log("end index.js render")

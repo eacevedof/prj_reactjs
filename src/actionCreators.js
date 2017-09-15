@@ -1,15 +1,18 @@
 //actionCreators.js 
 //funciones que se le pasan al store
+console.log("actionCreators.js")
 
-const addToCart = oProduct => {
+const acAddToCart = oProduct => {
+    console.log("creator: acAddToCart")
     let oAction = {
         type: "ADD_TO_CART",
         product: oProduct
     }
     return oAction
-}
+}//addToCart
 
-const removeFromCart = oProduct => {
+const acRemoveFromCart = oProduct => {
+    console.log("creator: acRemoveFromCart")
     let oAction = {
         type: "REMOVE_FROM_CART",
         product: oProduct
@@ -17,4 +20,4 @@ const removeFromCart = oProduct => {
     return oAction
 }//removeFromCart
 
-export {addToCart, removeFromCart}
+export {acAddToCart, acRemoveFromCart}

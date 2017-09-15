@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Panel, Table, Button, Glyphicon } from 'react-bootstrap';
-import {removeFromCart} from "../actionCreators"
+import {acRemoveFromCart} from "../actionCreators"
 import {connect} from "react-redux"
+
+console.log("ShoppingCart.js")
 
 const oStyles = {
     footer: {
@@ -12,6 +14,7 @@ const oStyles = {
 class ShoppingCart extends Component {
     
     render() {
+        console.log("ShoppingCart.render")
         return (
             <Panel header="Shopping Cart">
                 <Table fill>
@@ -51,10 +54,9 @@ const mapStateToProps = oState => {
 
 const mapDispatchToProps = fnDispatch => {
     return {
-        //la intención es gestionar esto con action creators
         removeFromCart(oProduct){
-            //addToCart es una accion pasada por action creators
-            fnDispatch(removeFromCart(oProduct))
+            //removeFromCart: ActionCreator
+            fnDispatch(acRemoveFromCart(oProduct))
         }//removeFromCart        
     }
 }
