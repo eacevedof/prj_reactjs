@@ -88,6 +88,10 @@ configuro package.json.scripts con los scripts de create-react-app
 
 yarn global add eslint --prefix /usr/local
 
+# es un gestor de comunicaciones entre componentes a traves de props
+# tiene un componente provider
+yarn add react-redux --dev
+
 #en caso de hacer el pull en otro servidor
 yarn install --check-files
 
