@@ -1,3 +1,4 @@
+//se importa el gestor de estado y acciones "createStore"
 import { createStore } from "redux";
 
 //El store matiene el acceso al estado de forma centralizada
@@ -24,21 +25,21 @@ const stRemoveFromCart = (oState,oAction) => {
     return oR
 }//stRemoveFromCart
 
-//la funcion reductora devolvera un nuevo estado
-//esta funcion es la que se encarga de realizar cambios al estado
-const fnReducer = (oState,oAction)=>{
+//La funcion reductora recibe un estado, una acción y devuelve un nuevo estado
+const fnReducer = (oPrevState,oAction)=>{
     console.log("fnReducer.oAction.type",oAction.type)
-    console.log("fnReducer.oState",oState)
+    console.log("fnReducer.oState",oPrevState)
     //console.log("...oState",...oState)
     if(oAction.type === "ADD_TO_CART")
     {
-        return stAddToCart(oState,oAction)
+        //devuelve el nuevo estado
+        return stAddToCart(oPrevState,oAction)
     }
     else if(oAction.type === "REMOVE_FROM_CART")
     {
-        return stRemoveFromCart(oState,oAction)
+        return stRemoveFromCart(oPrevState,oAction)
     }
-    return oState;
+    return oPrevState;
 }//fnReducer
 
 //exporta un objeto oStore. La función reductora estara a la escucha de los cambios de estado para actualizarlos.
