@@ -32,9 +32,9 @@ class ProductList extends Component {
 
         this.oState = {
             arProducts: [
-                { id: 1, name: "Hipster Ultimate", price: 299, image: "https://s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-1_.jpg" },
-                { id: 2, name: "On Motion Live", price: 99, image: "https://s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-2_.jpg" },
-                { id: 3, name: "Underground Max", price: 149, image: "https://s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-3_.jpg" },
+                { id: 1, name: "Hipster Ultimate", price: 299, image: "https://s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-1.jpg" },
+                { id: 2, name: "On Motion Live", price: 99, image: "https://s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-2.jpg" },
+                { id: 3, name: "Underground Max", price: 149, image: "https://s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-3.jpg" },
             ]
         }//this.oState
     }//constructor
@@ -61,11 +61,11 @@ class ProductList extends Component {
     }//render
 
     addToCart(oProduct) {
-        console.log("addToCart launched","oProduct",oProduct)
+        console.log("ProductList.addToCart launched","oProduct",oProduct)
         let oAction = acAddToCart(oProduct)
         oStore.dispatch(oAction)
     }//addToCart
 
 }//ProductList
 
-export default ProductList;
+export default ProductList

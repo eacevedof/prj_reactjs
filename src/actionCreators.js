@@ -1,15 +1,17 @@
 //actionCreators.js 
 //funciones que se le pasan al store
+//son funciones que devuelve un "Action"
 console.log("actionCreators.js")
 
 const acAddToCart = oProduct => {
+    //aqui se podría llamar a un servidor remoto
     console.log("creator: acAddToCart")
     let oAction = {
         type: "ADD_TO_CART",
         product: oProduct
     }
     return oAction
-}//addToCart
+}//acAddToCart
 
 const acRemoveFromCart = oProduct => {
     console.log("creator: acRemoveFromCart")
@@ -18,6 +20,7 @@ const acRemoveFromCart = oProduct => {
         product: oProduct
     }    
     return oAction
-}//removeFromCart
+}//acRemoveFromCart
 
+//publico estas dos funciones
 export {acAddToCart, acRemoveFromCart}
