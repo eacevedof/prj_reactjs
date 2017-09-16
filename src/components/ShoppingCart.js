@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { Panel, Table, Button, Glyphicon } from 'react-bootstrap';
 import {acRemoveFromCart} from "../actionCreators"
+//react-redux: crea por nosotros un componente contenedor "<Provider>" que envuelve nuestro componente y le pasa 
+//todo por propiedades (estado y metodos que necesitemos)
+//nos ayuda a crear componentes funcionales (en vez de clases)
+//https://youtu.be/dAm3jicYvR8?t=225 Indica lo que sobra despues de usar react-redux
 import {connect} from "react-redux"
 
 console.log("ShoppingCart.js")
@@ -55,7 +59,9 @@ const mapStateToProps = oState => {
 
 //fnDispatch: store.fndispatch
 const mapDispatchToProps = fnDispatch => {
-    
+    //hay q devolver un objeto con los metodos que vamos a utilizar en el componente
+    //presentacional, estos objetos estaran disponibles en la capa de presentación a traves 
+    //de props
     let oDispatch = {
         removeFromCart(oProduct){
             //removeFromCart: ActionCreator
@@ -66,5 +72,6 @@ const mapDispatchToProps = fnDispatch => {
     return oDispatch 
 }//mapDispatchToProps
 
+//connect el pasa el estado y las funciones a <Provider>
 //mapStateToProps(oState);mapDispatchToProps(fn)
 export default connect(mapStateToProps,mapDispatchToProps)(ShoppingCart);
