@@ -2,13 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import './index.css';
-import store from "./store";
+//store tiene 3 metodos subscribe(fn),dispatch(oAction),getState()
+import oStore from "./store";
 import {Provider} from "react-redux"
 
 console.log("inicio index.js")
 
+
 ReactDOM.render(
-    <Provider store={store}>
+    <Provider store={oStore}>
         <App />
     </Provider>,
     document.getElementById("root")

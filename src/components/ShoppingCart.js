@@ -14,7 +14,6 @@ const oStyles = {
 class ShoppingCart extends Component {
     
     render() {
-        
         console.log("ShoppingCart.render")
         return (
             <Panel header="Shopping Cart">
@@ -48,20 +47,24 @@ class ShoppingCart extends Component {
 
 //con esto evitamos tener el constuctor y el store
 const mapStateToProps = oState => {
-    return {
+    let oStateNew = {
         arCart: oState.arCart
-    }
+    } 
+    return oStateNew 
 }//mapStateToProps
 
+//fnDispatch: store.fndispatch
 const mapDispatchToProps = fnDispatch => {
     
-    return {
+    let oDispatch = {
         removeFromCart(oProduct){
             //removeFromCart: ActionCreator
             let oAction = acRemoveFromCart(oProduct)
             fnDispatch(oAction)
         }//removeFromCart 
-    }
+    } 
+    return oDispatch 
 }//mapDispatchToProps
 
+//mapStateToProps(oState);mapDispatchToProps(fn)
 export default connect(mapStateToProps,mapDispatchToProps)(ShoppingCart);
