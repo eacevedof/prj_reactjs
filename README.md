@@ -97,6 +97,9 @@ yarn add react-redux --dev
 #en caso de hacer el pull en otro servidor
 yarn install --check-files
 
+#para hacer llamada http asincronas, al json por ejemplo
+yarn add redux-thunk
+
 yarn start
 
 ```
