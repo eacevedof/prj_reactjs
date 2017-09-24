@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Button, Glyphicon } from 'react-bootstrap';
 //se necesita el store para actualizar el estado a partir de la accion recibida 
-import oStore from "../store"
+//import oStore from "../store"
 //devuelve la accion a ejecutar
 import {fnAcAddToCart,fnAcLoadProducts} from "../actionCreators"
 import {connect} from "react-redux"
