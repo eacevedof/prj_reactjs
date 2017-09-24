@@ -37,4 +37,4 @@ const fnAcLoadProducts = ()=>{
 }
 
 //publico estas dos funciones
-export {fnAcAddToCart, fnAcRemoveFromCart}
+export {fnAcAddToCart, fnAcRemoveFromCart,fnAcLoadProducts}
