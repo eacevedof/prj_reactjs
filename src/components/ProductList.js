@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Button, Glyphicon } from 'react-bootstrap';
+//se necesita el store para actualizar el estado a partir de la accion recibida 
 import oStore from "../store"
-import {acAddToCart} from "../actionCreators"
+//devuelve la accion a ejecutar
+import {fnAcAddToCart} from "../actionCreators"
 
-console.log("ProductList.js")
+console.log("load 3: ProductList.js")
 
 const oStyles = {
     products: {
@@ -62,7 +64,8 @@ class ProductList extends Component {
 
     addToCart(oProduct) {
         console.log("ProductList.addToCart launched","oProduct",oProduct)
-        let oAction = acAddToCart(oProduct)
+        let oAction = fnAcAddToCart(oProduct)
+        
         oStore.dispatch(oAction)
     }//addToCart
 

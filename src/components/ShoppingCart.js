@@ -1,9 +1,9 @@
 import React /*, { Component }*/ from 'react'; //Nos sobra Component al convertir a función la clase
 import { Panel, Table, Button, Glyphicon } from 'react-bootstrap';
-import {acRemoveFromCart} from "../actionCreators"
-//react-redux: crea por nosotros un componente contenedor "<Provider>" que envuelve nuestro componente y le pasa 
+import {fnAcRemoveFromCart} from "../actionCreators"
+//react-redux: crea por nosotros un componente contenedor "<Provider>" (en index.js) que envuelve nuestro componente y le pasa 
 //todo por propiedades (estado y metodos que necesitemos)
-//nos ayuda a crear componentes funcionales (en vez de clases)
+//nos ayuda a crear componentes funcionales (en vez de clases).  Es decir como vistas puras
 //https://youtu.be/dAm3jicYvR8?t=225 Indica lo que sobra despues de usar react-redux
 //https://youtu.be/dAm3jicYvR8?t=407 cambiar clases a funciones
 import {connect} from "react-redux"
@@ -48,7 +48,7 @@ const fnRenderShoppingCart = (oProps)=>{
         </Panel>
     )//return
     
-}//ShoppingCart
+}//fnRenderShoppingCart
 
 //con esto evitamos tener el constuctor y el store
 const mapStateToProps = oState => {
@@ -66,10 +66,10 @@ const mapDispatchToProps = fnDispatch => {
     let oDispatch = {
         removeFromCart(oProduct){
             //removeFromCart: ActionCreator
-            let oAction = acRemoveFromCart(oProduct)
+            let oAction = fnAcRemoveFromCart(oProduct)
             fnDispatch(oAction)
         }//removeFromCart 
-    } 
+    }//oDispatch
     return oDispatch 
 }//mapDispatchToProps
 

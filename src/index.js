@@ -6,7 +6,7 @@ import './index.css';
 import oStore from "./store";
 import {Provider} from "react-redux"
 
-console.log("inicio index.js")
+console.log("load 5: index.js")
 
 
 ReactDOM.render(

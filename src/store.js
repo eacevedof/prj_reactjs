@@ -5,11 +5,12 @@ import { createStore } from "redux";
 //Permite el acceso al estado a traves de getState()
 //Registra los suscriptores a través de subscribe(fn)
 //Permite que el estado sea actualizado a través del método dispatch(fn)
-console.log("store.js")
+console.log("load 1: store.js")
 
 const stAddToCart = (oState,oAction) => {
     let oR = {
         ...oState,
+        //con array.concat se añaden los productos nuevos
         arCart: oState.arCart.concat(oAction.product)
     } 
     console.log("store.js: stAddToCart oState",oState,"oR",oR)
