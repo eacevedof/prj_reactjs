@@ -31,7 +31,15 @@ const fnStoreReducer = (oState,oAction)=>{
     console.log("fnStoreReducer.oAction.type",oAction.type)
     console.log("fnStoreReducer.oState",oState)
     //console.log("...oState",...oState)
-    if(oAction.type === "ADD_TO_CART")
+    if(oAction.type === "REPLACE_PRODUCTS")
+    {
+        let oStateNew = {
+            ...oState,
+            arProducts: oAction.arProducts
+        }
+        return oStateNew
+    }
+    else if(oAction.type === "ADD_TO_CART")
     {
         //devuelve el nuevo estado
         return fnStoreAddtocart(oState,oAction)
@@ -45,4 +53,4 @@ const fnStoreReducer = (oState,oAction)=>{
 
 //exporta un objeto oStore. La función reductora estara a la escucha de los cambios de estado para actualizarlos.
 //se inicializa con un estado inicial vacio arCart:[]
-export default createStore(fnStoreReducer, { arCart:[] });
+export default createStore(fnStoreReducer, { arCart:[], arProducts:[] });
