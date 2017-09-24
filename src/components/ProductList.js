@@ -21,17 +21,17 @@ const oStyles = {
     }
 }//oStyles
 
-const fnProductList = (oState)=> {
+const fnProductList = ({arProducts,fnAddToCart})=> {
     console.log("fnProductList.render()")
     return (
         <div style={oStyles.products}>
-            {oState.arProducts.map(oProduct =>
+            {arProducts.map(oProduct =>
                 <div className="thumbnail" style={oStyles.product} key={oProduct.id}>
                     <img src={oProduct.image} alt={oProduct.name} />
                     <div className="caption">
                         <h4>{oProduct.name}</h4>
                         <p>
-                            <Button bsStyle="primary" onClick={() => this.addToCart(oProduct)} role="button" disabled={oProduct.inventory <= 0}>
+                            <Button bsStyle="primary" onClick={() => fnAddToCart(oProduct)} role="button" disabled={oProduct.inventory <= 0}>
                                 ${oProduct.price} <Glyphicon glyph="shopping-cart" />
                             </Button>
                         </p>
@@ -54,7 +54,13 @@ const fnMapDispatchToProps = (fnDispatch)=>{
     console.log("PL.fnMapDispatchToProps")
     let oDispatch = {
         fnLoadProducts : arProducts=>{
+            console.log("oDispatch.fnLoadProducts")
             let oAction = fnAcLoadProducts(arProducts)
+            fnDispatch(oAction)
+        },
+        fnAddToCart : oProduct=>{
+            console.log("oDispatch.fnAddToCart")
+            let oAction = fnAcAddToCart(oProduct)
             fnDispatch(oAction)
         }
     }
