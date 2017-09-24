@@ -18,6 +18,7 @@ const oStyles = {
 
 //Este archivo ahora se convierte en un componente presentacional.
 //no tiene lógica
+//destructurar un argumento. el objeto props lo partimos en objetos
 //{arCart,fnRemoveFromCart} = obj.arCart,obj.fnRemoveFromCart
 const fnRenderShoppingCart = ({arCart,fnRemoveFromCart})=>{
 
