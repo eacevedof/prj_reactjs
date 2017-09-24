@@ -5,13 +5,12 @@ import { createStore, applyMiddleware } from "redux"
 //ejecutada directamente, esta función podra hacer llamadas asincronas. Ya no devolvera una cadena de texto
 //https://youtu.be/dRlD0YqU6w4?t=417 importa redux-thunk
 import {thunk} from "redux-thunk"
-
-console.log(thunk);
 //El store matiene el acceso al estado de forma centralizada
 //Permite el acceso al estado a traves de getState()
 //Registra los suscriptores a través de subscribe(fn)
 //Permite que el estado sea actualizado a través del método dispatch(fn)
 console.log("load 1: store.js")
+console.log("thunk",thunk);
 
 const fnStoreAddtocart = (oState,oAction) => {
     let oStateNew = {
@@ -57,6 +56,13 @@ const fnStoreReducer = (oState,oAction)=>{
     return oState;
 }//fnStoreReducer
 
+const fnLogger = oStore => fnNext => oAction => {
+    console.log("dispatching",oAction)
+    let oResult = fnNext(oAction)
+    console.log("next state",oStore.getState())
+    return oResult
+}
+
 //exporta un objeto oStore. La función reductora estara a la escucha de los cambios de estado para actualizarlos.
 //se inicializa con un estado inicial vacio arCart:[]
-export default createStore(fnStoreReducer, { arCart:[], arProducts:[] },applyMiddleware(logger,thunk));
+export default createStore(fnStoreReducer, { arCart:[], arProducts:[] }, applyMiddleware(fnLogger,thunk));

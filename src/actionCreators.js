@@ -34,15 +34,14 @@ const fnAcLoadProducts = ()=>{
 
     const fn = (fnDispatch)=>{
         axios.get("http://json.theframework.es/index.php?getfile=app_product.json")
-                .then(oResponse => {
-                    let oAction = {
-                        type: "REPLACE_PRODUCTS",
-                        arProducts: oResponse.data
-                    }                    
-                    fnDispatch(oAction)
-                })
-        
-    }
+            .then(oResponse => {
+                let oAction = {
+                    type: "REPLACE_PRODUCTS",
+                    arProducts: oResponse.data
+                }                    
+                fnDispatch(oAction)
+            })
+    }//fn
 
     return fn
 }//fnAcLoadProducts
