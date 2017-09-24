@@ -1,6 +1,10 @@
 //se importa el gestor de estado y acciones "createStore"
-import { createStore } from "redux";
+import { createStore } from "redux"
+//redux-thunk hackea el action para poder retornar una función para que pueda ser 
+//ejecutada directamente. Ya no devolvera una cadena de texto
+import {thunk} from "redux-thunk"
 
+console.log(thunk);
 //El store matiene el acceso al estado de forma centralizada
 //Permite el acceso al estado a traves de getState()
 //Registra los suscriptores a través de subscribe(fn)
@@ -53,4 +57,4 @@ const fnStoreReducer = (oState,oAction)=>{
 
 //exporta un objeto oStore. La función reductora estara a la escucha de los cambios de estado para actualizarlos.
 //se inicializa con un estado inicial vacio arCart:[]
-export default createStore(fnStoreReducer, { arCart:[], arProducts:[] });
+export default createStore(fnStoreReducer, { arCart:[], arProducts:[] },applyMiddleware(logger,thunk));
