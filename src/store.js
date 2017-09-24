@@ -1,7 +1,9 @@
 //se importa el gestor de estado y acciones "createStore"
-import { createStore } from "redux"
+//https://github.com/makeitrealcamp/redux-example/blob/react-redux/src/store.js
+import { createStore, applyMiddleware } from "redux"
 //redux-thunk hackea el action para poder retornar una función para que pueda ser 
-//ejecutada directamente. Ya no devolvera una cadena de texto
+//ejecutada directamente, esta función podra hacer llamadas asincronas. Ya no devolvera una cadena de texto
+//https://youtu.be/dRlD0YqU6w4?t=417 importa redux-thunk
 import {thunk} from "redux-thunk"
 
 console.log(thunk);

@@ -1,6 +1,8 @@
 //actionCreators.js 
 //funciones que se le pasan al store
 //son funciones que devuelve un "Action"
+import axios from "axios"
+
 console.log("load 2: actionCreators.js")
 
 const fnAcAddToCart = oProduct => {
@@ -24,17 +26,26 @@ const fnAcRemoveFromCart = oProduct => {
 
 const fnAcLoadProducts = ()=>{
     console.log("creator: fnAcLoadProducts")
-    const  arProducts = [
-                { id: 1, name: "Hipster Ultimate", price: 299, image: "https://s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-1.jpg" },
-                { id: 2, name: "On Motion Live", price: 99, image: "https://s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-2.jpg" },
-                { id: 3, name: "Underground Max", price: 149, image: "https://s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-3.jpg" },
-            ] 
-    let oAction = {
-        type: "REPLACE_PRODUCTS",
-        arProducts: arProducts
+//    const  arProducts = [
+//                { id: 1, name: "Hipster Ultimate", price: 299, image: "https://s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-1.jpg" },
+//                { id: 2, name: "On Motion Live", price: 99, image: "https://s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-2.jpg" },
+//                { id: 3, name: "Underground Max", price: 149, image: "https://s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-3.jpg" },
+//            ] 
+
+    const fn = (fnDispatch)=>{
+        axios.get("http://json.theframework.es/index.php?getfile=app_product.json")
+                .then(oResponse => {
+                    let oAction = {
+                        type: "REPLACE_PRODUCTS",
+                        arProducts: oResponse.data
+                    }                    
+                    fnDispatch(oAction)
+                })
+        
     }
-    return oAction
-}
+
+    return fn
+}//fnAcLoadProducts
 
 //publico estas dos funciones
 export {fnAcAddToCart, fnAcRemoveFromCart, fnAcLoadProducts}

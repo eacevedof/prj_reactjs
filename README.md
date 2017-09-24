@@ -97,8 +97,12 @@ yarn add react-redux --dev
 #en caso de hacer el pull en otro servidor
 yarn install --check-files
 
-#para hacer llamada http asincronas, al json por ejemplo
+#hack para acciones, permite hacer un dispatch directamente de la accion haciendo que esta
+#devuelva una funcion y no un texto
 yarn add redux-thunk
+
+#ejecuta llamadas asincronas
+yarn add axios
 
 yarn start
 
