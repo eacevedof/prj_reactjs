@@ -18,19 +18,20 @@ const oStyles = {
 
 //Este archivo ahora se convierte en un componente presentacional.
 //no tiene lógica
-const fnRenderShoppingCart = (oProps)=>{
+//{arCart,fnRemoveFromCart} = obj.arCart,obj.fnRemoveFromCart
+const fnRenderShoppingCart = ({arCart,fnRemoveFromCart})=>{
 
-    console.log("fnShoppingCart")
+    console.log("fnRenderShoppingCart")
     return (
         <Panel header="Shopping Cart">
             <Table fill>
                 <tbody>
-                  {oProps.arCart.map(oProduct =>
+                  {arCart.map(oProduct =>
                     <tr key={oProduct.id}>
                         <td>{oProduct.name}</td>
                         <td className="text-right">${oProduct.price}</td>
                         <td className="text-right">
-                            <Button bsSize="xsmall" bsStyle="danger" onClick={() => oProps.removeFromCart(oProduct)}>
+                            <Button bsSize="xsmall" bsStyle="danger" onClick={() => fnRemoveFromCart(oProduct)}>
                                 <Glyphicon glyph="trash" />
                             </Button>
                         </td>
@@ -40,7 +41,7 @@ const fnRenderShoppingCart = (oProps)=>{
                 <tfoot>
                     <tr>
                         <td colSpan="4" style={oStyles.footer}>
-                          Total: ${oProps.arCart.reduce((fSum,oProduct) => fSum + oProduct.price, 0)}
+                          Total: ${arCart.reduce((fSum,oProduct) => fSum + oProduct.price, 0)}
                         </td>
                     </tr>
                 </tfoot>
@@ -51,28 +52,28 @@ const fnRenderShoppingCart = (oProps)=>{
 }//fnRenderShoppingCart
 
 //con esto evitamos tener el constuctor y el store
-const mapStateToProps = oState => {
+const fnMapStateToProps = oState => {
     let oStateNew = {
         arCart: oState.arCart
     } 
     return oStateNew 
-}//mapStateToProps
+}//fnMapStateToProps
 
 //fnDispatch: store.fndispatch
-const mapDispatchToProps = fnDispatch => {
+const fnMapDispatchToProps = fnDispatch => {
     //hay q devolver un objeto con los metodos que vamos a utilizar en el componente
     //presentacional, estos objetos estaran disponibles en la capa de presentación a traves 
     //de props
     let oDispatch = {
-        removeFromCart(oProduct){
+        fnRemoveFromCart : oProduct => {
             //removeFromCart: ActionCreator
             let oAction = fnAcRemoveFromCart(oProduct)
             fnDispatch(oAction)
         }//removeFromCart 
     }//oDispatch
     return oDispatch 
-}//mapDispatchToProps
+}//fnMapDispatchToProps
 
 //connect el pasa el estado y las funciones a <Provider>
-//mapStateToProps(oState);mapDispatchToProps(fn)
-export default connect(mapStateToProps,mapDispatchToProps)(fnRenderShoppingCart);
+//fnMapStateToProps(oState);fnMapDispatchToProps(fn)
+export default connect(fnMapStateToProps,fnMapDispatchToProps)(fnRenderShoppingCart);

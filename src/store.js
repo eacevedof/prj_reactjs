@@ -7,24 +7,24 @@ import { createStore } from "redux";
 //Permite que el estado sea actualizado a través del método dispatch(fn)
 console.log("load 1: store.js")
 
-const stAddToCart = (oState,oAction) => {
-    let oR = {
+const fnStoreAddtocart = (oState,oAction) => {
+    let oNewState = {
         ...oState,
         //con array.concat se añaden los productos nuevos
         arCart: oState.arCart.concat(oAction.product)
     } 
-    console.log("store.js: stAddToCart oState",oState,"oR",oR)
-    return oR 
-}//stAddToCart
+    console.log("store.js: fnStoreAddtocart oState",oState,"oNewState",oNewState)
+    return oNewState 
+}//fnStoreAddtocart
 
-const stRemoveFromCart = (oState,oAction) => {
-    let oR = {
+const fnStoreRemovefromcart = (oState,oAction) => {
+    let oNewState = {
         ...oState,
         arCart: oState.arCart.filter((oProduct)=>oProduct.id !== oAction.product.id)
     }
-    console.log("store.js: stRemoveFromCart oState",oState,"oR",oR)
-    return oR
-}//stRemoveFromCart
+    console.log("fnStoreRemovefromcart oState",oState,"oNewState",oNewState)
+    return oNewState
+}//fnStoreRemovefromcart
 
 //La funcion reductora recibe un estado, una acción y devuelve un nuevo estado
 const fnReducer = (oPrevState,oAction)=>{
@@ -34,11 +34,11 @@ const fnReducer = (oPrevState,oAction)=>{
     if(oAction.type === "ADD_TO_CART")
     {
         //devuelve el nuevo estado
-        return stAddToCart(oPrevState,oAction)
+        return fnStoreAddtocart(oPrevState,oAction)
     }
     else if(oAction.type === "REMOVE_FROM_CART")
     {
-        return stRemoveFromCart(oPrevState,oAction)
+        return fnStoreRemovefromcart(oPrevState,oAction)
     }
     return oPrevState;
 }//fnReducer

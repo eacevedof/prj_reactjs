@@ -14,7 +14,7 @@ const fnAcAddToCart = oProduct => {
 }//fnAcAddToCart
 
 const fnAcRemoveFromCart = oProduct => {
-    console.log("creator: acRemoveFromCart")
+    console.log("creator: fnAcRemoveFromCart")
     let oAction = {
         type: "REMOVE_FROM_CART",
         product: oProduct
