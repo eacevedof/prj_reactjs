@@ -2,6 +2,7 @@
 const Webpack = require("webpack")
 const isDebugMode = process.env.NODE_ENV != "production"
 const oPath = require("path")
+console.log("webpack.config.js")
 //console.log("oPath:",oPath)
 //console.log("_dirname",__dirname) // C:\xampp\htdocs\prj_reactwebpack\the_framework\config
 //console.log("resolve ./",oPath.resolve("./")) //C:\xampp\htdocs\prj_reactwebpack

@@ -4,7 +4,7 @@ import ProductList from './components/ProductList';
 import ShoppingCart from './components/ShoppingCart';
 import './App.css';
 
-console.log("load 4: App.js")
+console.log("load 5: App.js")
 
 class App extends Component {
     render() {

@@ -8,7 +8,7 @@ import {fnAcRemoveFromCart} from "../actionCreators"
 //https://youtu.be/dAm3jicYvR8?t=407 cambiar clases a funciones
 import {connect} from "react-redux"
 
-console.log("ShoppingCart.js")
+console.log("load 4: ShoppingCart.js")
 
 const oStyles = {
     footer: {
@@ -21,7 +21,7 @@ const oStyles = {
 //{arCart,fnRemoveFromCart} = obj.arCart,obj.fnRemoveFromCart
 const fnRenderShoppingCart = ({arCart,fnRemoveFromCart})=>{
 
-    console.log("fnRenderShoppingCart")
+    console.log("SC.fnRenderShoppingCart")
     return (
         <Panel header="Shopping Cart">
             <Table fill>
@@ -53,6 +53,7 @@ const fnRenderShoppingCart = ({arCart,fnRemoveFromCart})=>{
 
 //con esto evitamos tener el constuctor y el store
 const fnMapStateToProps = oState => {
+    console.log("SC.fnMapStateToProps")
     let oStateNew = {
         arCart: oState.arCart
     } 
@@ -61,12 +62,14 @@ const fnMapStateToProps = oState => {
 
 //fnDispatch: store.fndispatch
 const fnMapDispatchToProps = fnDispatch => {
+    console.log("SC.fnMapDispatchToProps")
     //hay q devolver un objeto con los metodos que vamos a utilizar en el componente
     //presentacional, estos objetos estaran disponibles en la capa de presentación a traves 
     //de props
     let oDispatch = {
         fnRemoveFromCart : oProduct => {
-            //removeFromCart: ActionCreator
+            console.log("oDispatch.fnRemoveFromCart")
+            //fnAcRemoveFromCart: ActionCreator
             let oAction = fnAcRemoveFromCart(oProduct)
             fnDispatch(oAction)
         }//removeFromCart 
@@ -76,4 +79,6 @@ const fnMapDispatchToProps = fnDispatch => {
 
 //connect el pasa el estado y las funciones a <Provider>
 //fnMapStateToProps(oState);fnMapDispatchToProps(fn)
+//fnRenderShoppingCart({arCart,fnRemoveFromCart})
+//connect crea dos listeners para los cambios de fnRenderShoppingCart.
 export default connect(fnMapStateToProps,fnMapDispatchToProps)(fnRenderShoppingCart);

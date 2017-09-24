@@ -8,41 +8,41 @@ import { createStore } from "redux";
 console.log("load 1: store.js")
 
 const fnStoreAddtocart = (oState,oAction) => {
-    let oNewState = {
+    let oStateNew = {
         ...oState,
         //con array.concat se añaden los productos nuevos
         arCart: oState.arCart.concat(oAction.product)
     } 
-    console.log("store.js: fnStoreAddtocart oState",oState,"oNewState",oNewState)
-    return oNewState 
+    console.log("store.js: fnStoreAddtocart oState",oState,"oStateNew",oStateNew)
+    return oStateNew 
 }//fnStoreAddtocart
 
 const fnStoreRemovefromcart = (oState,oAction) => {
-    let oNewState = {
+    let oStateNew = {
         ...oState,
-        arCart: oState.arCart.filter((oProduct)=>oProduct.id !== oAction.product.id)
+        arCart: oState.arCart.filter(oProduct => oProduct.id !== oAction.product.id)
     }
-    console.log("fnStoreRemovefromcart oState",oState,"oNewState",oNewState)
-    return oNewState
+    console.log("fnStoreRemovefromcart oState",oState,"oStateNew",oStateNew)
+    return oStateNew
 }//fnStoreRemovefromcart
 
 //La funcion reductora recibe un estado, una acción y devuelve un nuevo estado
-const fnReducer = (oPrevState,oAction)=>{
-    console.log("fnReducer.oAction.type",oAction.type)
-    console.log("fnReducer.oState",oPrevState)
+const fnStoreReducer = (oState,oAction)=>{
+    console.log("fnStoreReducer.oAction.type",oAction.type)
+    console.log("fnStoreReducer.oState",oState)
     //console.log("...oState",...oState)
     if(oAction.type === "ADD_TO_CART")
     {
         //devuelve el nuevo estado
-        return fnStoreAddtocart(oPrevState,oAction)
+        return fnStoreAddtocart(oState,oAction)
     }
     else if(oAction.type === "REMOVE_FROM_CART")
     {
-        return fnStoreRemovefromcart(oPrevState,oAction)
+        return fnStoreRemovefromcart(oState,oAction)
     }
-    return oPrevState;
-}//fnReducer
+    return oState;
+}//fnStoreReducer
 
 //exporta un objeto oStore. La función reductora estara a la escucha de los cambios de estado para actualizarlos.
 //se inicializa con un estado inicial vacio arCart:[]
-export default createStore(fnReducer, { arCart:[] });
+export default createStore(fnStoreReducer, { arCart:[] });
