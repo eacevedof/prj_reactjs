@@ -65,4 +65,4 @@ const fnLogger = oStore => fnNext => oAction => {
 
 //exporta un objeto oStore. La función reductora estara a la escucha de los cambios de estado para actualizarlos.
 //se inicializa con un estado inicial vacio arCart:[]
-export default createStore(fnStoreReducer, { arCart:[], arProducts:[] }, applyMiddleware(fnLogger,thunk));
+export default createStore(fnStoreReducer, { arCart:[], arProducts:[] }, applyMiddleware(fnLogger));
