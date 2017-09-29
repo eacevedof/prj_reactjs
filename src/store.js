@@ -57,7 +57,7 @@ const fnStoreReducer = (oState,oAction)=>{
 }//fnStoreReducer
 
 const fnLogger = oStore => fnNext => oAction => {
-    console.log("oStore",oStore,"fnNext",fnNext,"oAction",oAction)
+    console.info("oStore",oStore,"fnNext",fnNext,"oAction",oAction)
     let oResult = fnNext(oAction)
     return oResult
 }

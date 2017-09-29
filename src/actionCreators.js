@@ -1,6 +1,8 @@
 //actionCreators.js 
 //funciones que se le pasan al store
 //son funciones que devuelve un "Action"
+import axios from "axios"
+
 console.log("load 2: actionCreators.js")
 
 const fnAcAddToCart = oProduct => {
