@@ -1,6 +1,6 @@
 //se importa el gestor de estado y acciones "createStore"
 //https://github.com/makeitrealcamp/redux-example/blob/react-redux/src/store.js
-import { createStore, applyMiddleware } from "redux"
+import { createStore,applyMiddleware } from "redux"
 //redux-thunk hackea el action para poder retornar una función para que pueda ser 
 //ejecutada directamente, esta función podra hacer llamadas asincronas. Ya no devolvera una cadena de texto
 //https://youtu.be/dRlD0YqU6w4?t=417 importa redux-thunk
@@ -57,12 +57,12 @@ const fnStoreReducer = (oState,oAction)=>{
 }//fnStoreReducer
 
 const fnLogger = oStore => fnNext => oAction => {
-    console.log("dispatching",oAction)
+    console.log("oStore",oStore,"fnNext",fnNext,"oAction",oAction)
     let oResult = fnNext(oAction)
-    console.log("next state",oStore.getState())
     return oResult
 }
 
 //exporta un objeto oStore. La función reductora estara a la escucha de los cambios de estado para actualizarlos.
 //se inicializa con un estado inicial vacio arCart:[]
-export default createStore(fnStoreReducer, { arCart:[], arProducts:[] }, applyMiddleware(fnLogger));
+//export default createStore(fnStoreReducer, { arCart:[], arProducts:[] }, applyMiddleware(fnLogger));
+export default createStore(fnStoreReducer, { arCart:[], arProducts:[]  },applyMiddleware(fnLogger));
