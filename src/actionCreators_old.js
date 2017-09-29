@@ -33,7 +33,7 @@ const fnAcLoadProducts = ()=>{
 //            ] 
 
     const fn = (fnDispatch)=>{
-        axios.get("http://json.theframework.es/index.php?getfile=app_product.json")
+        axios.get("http://json.theframework.es/index.php?getfile=demoproducts.json")
             .then(oResponse => {
                 let oAction = {
                     type: "REPLACE_PRODUCTS",

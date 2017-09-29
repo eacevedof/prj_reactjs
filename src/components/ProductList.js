@@ -3,8 +3,8 @@ import { Button, Glyphicon } from 'react-bootstrap';
 //se necesita el store para actualizar el estado a partir de la accion recibida 
 //import oStore from "../store"
 //devuelve la accion a ejecutar
-import {fnAcAddToCart,fnAcLoadProducts} from "../actionCreators"
-import {connect} from "react-redux"
+import { fnAcAddToCart, fnAcLoadProducts } from "../actionCreators"
+import { connect } from "react-redux"
 
 console.log("load 3: ProductList.js")
 
