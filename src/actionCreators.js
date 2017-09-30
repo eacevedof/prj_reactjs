@@ -4,11 +4,11 @@
 import fnAxios from "axios"
 
 console.log("load 2: actionCreators.js")
-console.log("actionCreatros.js fnAxios: ",fnAxios)
+console.log("ACTIONCREATORS.fnAxios: ",fnAxios)
 
 const fnAcAddToCart = oProduct => {
     //aqui se podría llamar a un servidor remoto
-    console.log("creator: fnAcAddToCart")
+    console.log("ACTIONCREATORS.fnAcAddToCart return oAction+oProduct")
     let oAction = {
         type: "ADD_TO_CART",
         product: oProduct
@@ -17,7 +17,7 @@ const fnAcAddToCart = oProduct => {
 }//fnAcAddToCart
 
 const fnAcRemoveFromCart = oProduct => {
-    console.log("creator: fnAcRemoveFromCart")
+    console.log("ACTIONCREATORS.fnAcRemoveFromCart return oAction+oProduct")
     let oAction = {
         type: "REMOVE_FROM_CART",
         product: oProduct
@@ -27,12 +27,12 @@ const fnAcRemoveFromCart = oProduct => {
 
 //https://youtu.be/dRlD0YqU6w4?t=517 configuracion de esta funcion
 const fnAcLoadProducts = ()=>{
-    console.log("creator: fnAcLoadProducts")
+    console.log("ACTIONCREATORS.fnAcLoadProducts")
     
     return fnDispatch => {
         return fnAxios.get("http://json.theframework.es/index.php?getfile=demoproducts.json")
                 .then(oResponse => {
-                    console.log("fnAxios.then oResponse:",oResponse)
+                    console.log("ACTIONCREATORS.fnAxios.then oResponse:",oResponse)
                     let oAction = {
                         type: "REPLACE_PRODUCTS",
                         arProducts: oResponse.data

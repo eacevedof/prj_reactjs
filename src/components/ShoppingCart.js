@@ -22,7 +22,7 @@ const oStyles = {
 //{arCart,fnRemoveFromCart} = obj.arCart,obj.fnRemoveFromCart
 const fnRenderShoppingCart = ({arCart,fnRemoveFromCart})=>{
 
-    console.log("SC.fnRenderShoppingCart")
+    console.log("SHOPPINGCART.fnRenderShoppingCart")
     return (
         <Panel header="Shopping Cart">
             <Table fill>
@@ -54,7 +54,7 @@ const fnRenderShoppingCart = ({arCart,fnRemoveFromCart})=>{
 
 //con esto evitamos tener el constuctor y el store
 const fnMapStateToProps = oState => {
-    console.log("SC.fnMapStateToProps")
+    console.log("SHOPPINGCART.fnMapStateToProps return oStateNew con arCart")
     let oStateNew = {
         arCart: oState.arCart
     } 
@@ -63,13 +63,13 @@ const fnMapStateToProps = oState => {
 
 //fnDispatch: store.fndispatch
 const fnMapDispatchToProps = fnDispatch => {
-    console.log("SC.fnMapDispatchToProps")
+    console.log("SHOPPINGCART.fnMapDispatchToProps return oDispatch")
     //hay q devolver un objeto con los metodos que vamos a utilizar en el componente
     //presentacional, estos objetos estaran disponibles en la capa de presentación a traves 
     //de props
     let oDispatch = {
         fnRemoveFromCart : oProduct => {
-            console.log("oDispatch.fnRemoveFromCart")
+            console.log("SHOPPINGCART.fnMapDispatchToProps.oDispatch.fnRemoveFromCart")
             //fnAcRemoveFromCart: ActionCreator
             let oAction = fnAcRemoveFromCart(oProduct)
             fnDispatch(oAction)

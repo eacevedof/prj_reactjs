@@ -15,8 +15,8 @@ console.log("load 1: store.js")
 console.log("fnThunk",fnThunk);
 
 const fnStoreProducts = (arState=[],oAction)=>{
-    console.log("fnStoreProducts.oAction.type",oAction.type)
-    console.log("fnStoreProducts.arState",arState)
+    console.log("STORE.fnStoreProducts.oAction.type",oAction.type)
+    console.log("STORE.fnStoreProducts.arState",arState)
 
     if(oAction.type === "REPLACE_PRODUCTS")
     {
@@ -27,8 +27,8 @@ const fnStoreProducts = (arState=[],oAction)=>{
 }//fnStoreProducts
 
 const fnStoreCart = (arState=[],oAction)=>{
-    console.log("fnStoreCart.oAction.type",oAction.type)
-    console.log("fnStoreCart.arState",arState)
+    console.log("STORE.fnStoreCart.oAction.type",oAction.type)
+    console.log("STORE.fnStoreCart.arState",arState)
 
     if(oAction.type === "ADD_TO_CART")
     {        
@@ -44,9 +44,9 @@ const fnStoreCart = (arState=[],oAction)=>{
 
 const fnLogger = oStore => fnNext => oAction => {
     //console.log("fnLogger.oStore: ",oStore," | fnLogger.fnNext: ",fnNext," | fnLogger.oAction: ",oAction)
-    console.log("fnLogger dispatching oAction: ",oAction)
+    console.log("STORE.fnLogger dispatching oAction: ",oAction)
     let oResult = fnNext(oAction)
-    console.log("fnLogger oStore.getstate() next state: ",oStore.getState())
+    console.log("STORE.fnLogger oStore.getstate() next state: ",oStore.getState())
     return oResult
 }
 

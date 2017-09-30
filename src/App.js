@@ -8,7 +8,7 @@ console.log("load 5: App.js")
 
 class App extends Component {
     render() {
-        console.log("App.render()")
+        console.log("APP.App.render")
         return (
             <div>
                 <Navbar inverse staticTop>

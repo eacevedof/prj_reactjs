@@ -22,9 +22,9 @@ const oStyles = {
 }//oStyles
 
 const fnProductList = ({ arProducts, fnAddToCart }) => {
-    console.log("fnProductList.render()")
-    console.log("fnProductList: arProducts",arProducts)
-    console.log("fnProductList: fnAddToCart",fnAddToCart)
+    console.log("PRODUCTLIST.fnProductList.render()")
+    console.log("PRODUCTLIST.fnProductList: arProducts",arProducts)
+    console.log("PRODUCTLIST.fnProductList: fnAddToCart",fnAddToCart)
     
     return (
         <div style={oStyles.products}>
@@ -46,7 +46,7 @@ const fnProductList = ({ arProducts, fnAddToCart }) => {
 }//fnProductList
 
 const fnMapStateToProps = (oState)=>{
-    console.log("PL.fnMapStateToProps")
+    console.log("PRODUCTLIST.fnMapStateToProps return oStateNew con arProducts")
     let oStateNew = {
         arProducts : oState.arProducts
     }
@@ -54,15 +54,15 @@ const fnMapStateToProps = (oState)=>{
 }
 
 const fnMapDispatchToProps = fnDispatch => {
-    console.log("PL.fnMapDispatchToProps")
+    console.log("PRODUCTLIST.fnMapDispatchToProps devuelve oDispatch")
     let oDispatch = {
         fnLoadProducts : arProducts => {
-            console.log("oDispatch.fnLoadProducts")
+            console.log("PRODUCTLIST.fnMapDispatchToProps.oDispatch.fnLoadProducts")
             let oAction = fnAcLoadProducts(arProducts)
             fnDispatch(oAction)
         },
         fnAddToCart : oProduct => {
-            console.log("oDispatch.fnAddToCart")
+            console.log("PRODUCTLIST.fnMapDispatchToProps.oDispatch.fnAddToCart")
             let oAction = fnAcAddToCart(oProduct)
             fnDispatch(oAction)
         }
