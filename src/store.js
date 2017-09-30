@@ -14,12 +14,9 @@ import fnThunk from "redux-thunk"
 console.log("load 1: store.js")
 console.log("fnThunk",fnThunk);
 
-const fnStoreProducts = (oState,oAction)=>{
+const fnStoreProducts = (oState=[],oAction)=>{
     console.log("fnStoreProducts.oAction.type",oAction.type)
     console.log("fnStoreProducts.oState",oState)
-
-    if(oState === undefined)
-        return []
 
     if(oAction.type === "REPLACE_PRODUCTS")
     {
@@ -29,12 +26,9 @@ const fnStoreProducts = (oState,oAction)=>{
     return oState;
 }//fnStoreProducts
 
-const fnStoreCart = (oState,oAction)=>{
+const fnStoreCart = (oState=[],oAction)=>{
     console.log("fnStoreCart.oAction.type",oAction.type)
     console.log("fnStoreCart.oState",oState)
-
-    if(oState === undefined)
-        return []
 
     if(oAction.type === "ADD_TO_CART")
     {

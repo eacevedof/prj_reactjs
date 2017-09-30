@@ -2,6 +2,7 @@
 //funciones que se le pasan al store
 //son funciones que devuelve un "Action"
 import fnAxios from "axios"
+
 console.log("load 2: actionCreators.js")
 console.log("actionCreatros.js fnAxios: ",fnAxios)
 
@@ -31,6 +32,7 @@ const fnAcLoadProducts = ()=>{
     return fnDispatch => {
         return fnAxios.get("http://json.theframework.es/index.php?getfile=demoproducts.json")
                 .then(oResponse => {
+                    console.log("fnAxios.then oResponse:",oResponse)
                     let oAction = {
                         type: "REPLACE_PRODUCTS",
                         arProducts: oResponse.data
