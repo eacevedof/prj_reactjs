@@ -1,4 +1,4 @@
-//store.js 1.0.1 video 7: https://youtu.be/G_dbuk9B2pQ?list=PLxyfMWnjW2kuyePV1Gzn5W_gr3BGIZq8G&t=40
+//store.js 1.0.2 video 7: https://youtu.be/G_dbuk9B2pQ?list=PLxyfMWnjW2kuyePV1Gzn5W_gr3BGIZq8G&t=40
 //se importa el gestor de estado y acciones "createStore"
 //https://github.com/makeitrealcamp/redux-example/blob/react-redux/src/store.js
 //http://redux.js.org/docs/api/applyMiddleware.html
@@ -41,7 +41,6 @@ const fnStoreCart = (arState=[],oAction)=>{
     return arState;
 }//fnStoreCart
 
-
 const fnLogger = oStore => fnNext => oAction => {
     //console.log("fnLogger.oStore: ",oStore," | fnLogger.fnNext: ",fnNext," | fnLogger.oAction: ",oAction)
     console.log("STORE.fnLogger dispatching oAction: ",oAction)
@@ -53,4 +52,13 @@ const fnLogger = oStore => fnNext => oAction => {
 //exporta un objeto oStore. La función reductora estara a la escucha de los cambios de estado para actualizarlos.
 //se inicializa con un estado inicial vacio arCart:[]
 //export default createStore(fnStoreReducer, { arCart:[], arProducts:[] }, applyMiddleware(fnLogger));
-export default createStore(combineReducers({arCart:fnStoreCart,arProducts:fnStoreProducts}),applyMiddleware(fnLogger,fnThunk));
+const fnDispatch = combineReducers({arCart:fnStoreCart,arProducts:fnStoreProducts})
+console.log("STORE.fnDispatch",fnDispatch)
+
+const fnSubscribe = applyMiddleware(fnLogger,fnThunk)
+console.log("STORE.fnSubscribe",fnSubscribe)
+
+const oStore = createStore(fnDispatch,fnSubscribe)
+//oStore: {dispatch: ƒ, subscribe: ƒ, getState: ƒ, replaceReducer: ƒ, Symbol(observable): ƒ}
+console.log("STORE.oStore",oStore)
+export default oStore
