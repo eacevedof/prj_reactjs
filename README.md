@@ -130,3 +130,94 @@ Ejemplo repo original package.json
   }
 }
 ```
+
+```
+////////////////////////////////////
+//
+//
+//
+////////////////////////////////////
+
+load 2: actionCreators.js
+actionCreators.js:7 ACTIONCREATORS.fnAxios:  ƒ wrap() {
+    var args = new Array(arguments.length);
+    for (var i = 0; i < args.length; i++) {
+      args[i] = arguments[i];
+    }
+    return fn.apply(thisArg, args);
+  }
+ProductList.js:9 load 3: ProductList.js
+ShoppingCart.js:11 load 4: ShoppingCart.js
+App.js:7 load 5: App.js
+store.js:14 load 1: store.js
+store.js:15 fnThunk ƒ (_ref) {
+    var dispatch = _ref.dispatch,
+        getState = _ref.getState;
+    return function (next) {
+      return function (action) {
+        if (typeof action === 'function') {
+          return…
+store.js:30 STORE.fnStoreCart.oAction.type @@redux/INIT
+store.js:31 STORE.fnStoreCart.arState []
+store.js:30 STORE.fnStoreCart.oAction.type @@redux/PROBE_UNKNOWN_ACTION_w.d.l.w.2.d
+store.js:31 STORE.fnStoreCart.arState []
+store.js:18 STORE.fnStoreProducts.oAction.type @@redux/INIT
+store.js:19 STORE.fnStoreProducts.arState []
+store.js:18 STORE.fnStoreProducts.oAction.type @@redux/PROBE_UNKNOWN_ACTION_t.r.z.x.6
+store.js:19 STORE.fnStoreProducts.arState []
+store.js:30 STORE.fnStoreCart.oAction.type @@redux/INIT
+store.js:31 STORE.fnStoreCart.arState []
+store.js:18 STORE.fnStoreProducts.oAction.type @@redux/INIT
+store.js:19 STORE.fnStoreProducts.arState []
+index.js:10 load 6: index.js
+actionCreators.js:30 ACTIONCREATORS.fnAcLoadProducts
+store.js:47 STORE.fnLogger dispatching oAction:  ƒ (fnDispatch) {
+        return __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get("http://json.theframework.es/index.php?getfile=demoproducts.json").then(function (oResponse) {
+            console.log(…
+store.js:49 STORE.fnLogger oStore.getstate() next state:  {arCart: Array(0), arProducts: Array(0)}
+App.js:11 APP.App.render
+ProductList.js:49 PRODUCTLIST.fnMapStateToProps return oStateNew con arProducts
+ProductList.js:57 PRODUCTLIST.fnMapDispatchToProps devuelve oDispatch
+ProductList.js:25 PRODUCTLIST.fnProductList.render()
+ProductList.js:26 PRODUCTLIST.fnProductList: arProducts []
+ProductList.js:27 PRODUCTLIST.fnProductList: fnAddToCart ƒ fnAddToCart(oProduct) {
+            console.log("PRODUCTLIST.fnMapDispatchToProps.oDispatch.fnAddToCart");
+            var oAction = Object(__WEBPACK_IMPORTED_MODULE_2__actionCreators__["a" /* fnAcAd…
+ShoppingCart.js:57 SHOPPINGCART.fnMapStateToProps return oStateNew con arCart
+ShoppingCart.js:66 SHOPPINGCART.fnMapDispatchToProps return oDispatch
+ShoppingCart.js:25 SHOPPINGCART.fnRenderShoppingCart
+index.js:18 end index.js render
+actionCreators.js:35 ACTIONCREATORS.fnAxios.then oResponse: {data: Array(3), status: 200, statusText: "OK", headers: {…}, config: {…}, …}
+store.js:47 STORE.fnLogger dispatching oAction:  {type: "REPLACE_PRODUCTS", arProducts: Array(3)}
+store.js:30 STORE.fnStoreCart.oAction.type REPLACE_PRODUCTS
+store.js:31 STORE.fnStoreCart.arState []
+store.js:18 STORE.fnStoreProducts.oAction.type REPLACE_PRODUCTS
+store.js:19 STORE.fnStoreProducts.arState []
+ProductList.js:49 PRODUCTLIST.fnMapStateToProps return oStateNew con arProducts
+ProductList.js:25 PRODUCTLIST.fnProductList.render()
+ProductList.js:26 PRODUCTLIST.fnProductList: arProducts (3) [{…}, {…}, {…}]0: {id: 1, name: "Hipster Ultimate", price: 299, image: "https://s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-1.jpg"}1: {id: 2, name: "On Motion Live", price: 99, image: "https://s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-2.jpg"}2: {id: 3, name: "Underground Max", price: 149, image: "https://s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-3.jpg"}length: 3__proto__: Array(0)
+ProductList.js:27 PRODUCTLIST.fnProductList: fnAddToCart ƒ fnAddToCart(oProduct) {
+            console.log("PRODUCTLIST.fnMapDispatchToProps.oDispatch.fnAddToCart");
+            var oAction = Object(__WEBPACK_IMPORTED_MODULE_2__actionCreators__["a" /* fnAcAd…
+ShoppingCart.js:57 SHOPPINGCART.fnMapStateToProps return oStateNew con arCart
+store.js:49 STORE.fnLogger oStore.getstate() next state:  
+
+////////////////////////////////////
+//
+//  NUEVO
+//
+////////////////////////////////////
+PRODUCTLIST.fnMapDispatchToProps.oDispatch.fnAddToCart
+actionCreators.js:11 ACTIONCREATORS.fnAcAddToCart return oAction+oProduct
+store.js:47 STORE.fnLogger dispatching oAction:  {type: "ADD_TO_CART", product: {…}}
+store.js:30 STORE.fnStoreCart.oAction.type ADD_TO_CART
+store.js:31 STORE.fnStoreCart.arState []
+store.js:18 STORE.fnStoreProducts.oAction.type ADD_TO_CART
+store.js:19 STORE.fnStoreProducts.arState (3) [{…}, {…}, {…}]
+ProductList.js:49 PRODUCTLIST.fnMapStateToProps return oStateNew con arProducts
+ShoppingCart.js:57 SHOPPINGCART.fnMapStateToProps return oStateNew con arCart
+store.js:49 STORE.fnLogger oStore.getstate() next state:  {arCart: Array(1), arProducts: Array(3)}
+ShoppingCart.js:25 SHOPPINGCART.fnRenderShoppingCart
+
+```
+
