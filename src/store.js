@@ -1,3 +1,4 @@
+//store.js 1.0.1 video 7: https://youtu.be/G_dbuk9B2pQ?list=PLxyfMWnjW2kuyePV1Gzn5W_gr3BGIZq8G&t=40
 //se importa el gestor de estado y acciones "createStore"
 //https://github.com/makeitrealcamp/redux-example/blob/react-redux/src/store.js
 //http://redux.js.org/docs/api/applyMiddleware.html
