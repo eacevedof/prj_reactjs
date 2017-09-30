@@ -2,7 +2,7 @@
 //se importa el gestor de estado y acciones "createStore"
 //https://github.com/makeitrealcamp/redux-example/blob/react-redux/src/store.js
 //http://redux.js.org/docs/api/applyMiddleware.html
-import { createStore, applyMiddleware } from "redux"
+import { createStore, applyMiddleware, combineReducers } from "redux"
 //redux-thunk hackea el action para poder retornar una función para que pueda ser 
 //ejecutada directamente, esta función podra hacer llamadas asincronas. Ya no devolvera una cadena de texto
 //https://youtu.be/dRlD0YqU6w4?t=417 importa redux-thunk
@@ -14,57 +14,49 @@ import fnThunk from "redux-thunk"
 console.log("load 1: store.js")
 console.log("fnThunk",fnThunk);
 
-const fnStoreAddtocart = (oState,oAction) => {
-    let oStateNew = {
-        ...oState,
-        //con array.concat se añaden los productos nuevos
-        arCart: oState.arCart.concat(oAction.product)
-    } 
-    console.log("store.js: fnStoreAddtocart oState",oState,"oStateNew",oStateNew)
-    return oStateNew 
-}//fnStoreAddtocart
+const fnStoreProducts = (oState,oAction)=>{
+    console.log("fnStoreProducts.oAction.type",oAction.type)
+    console.log("fnStoreProducts.oState",oState)
 
-const fnStoreRemovefromcart = (oState,oAction) => {
-    let oStateNew = {
-        ...oState,
-        arCart: oState.arCart.filter(oProduct => oProduct.id !== oAction.product.id)
-    }
-    console.log("fnStoreRemovefromcart oState",oState,"oStateNew",oStateNew)
-    return oStateNew
-}//fnStoreRemovefromcart
+    if(oState === undefined)
+        return []
 
-//La funcion reductora recibe un estado, una acción y devuelve un nuevo estado
-const fnStoreReducer = (oState,oAction)=>{
-    console.log("fnStoreReducer.oAction.type",oAction.type)
-    console.log("fnStoreReducer.oState",oState)
-    //console.log("...oState",...oState)
     if(oAction.type === "REPLACE_PRODUCTS")
     {
-        let oStateNew = {
-            ...oState,
-            arProducts: oAction.arProducts
-        }
+        let oStateNew = oAction.arProducts
         return oStateNew
     }
-    else if(oAction.type === "ADD_TO_CART")
+    return oState;
+}//fnStoreProducts
+
+const fnStoreCart = (oState,oAction)=>{
+    console.log("fnStoreCart.oAction.type",oAction.type)
+    console.log("fnStoreCart.oState",oState)
+
+    if(oState === undefined)
+        return []
+
+    if(oAction.type === "ADD_TO_CART")
     {
-        //devuelve el nuevo estado
-        return fnStoreAddtocart(oState,oAction)
+        return oState.arCart.concat(oAction.product)
     }
     else if(oAction.type === "REMOVE_FROM_CART")
     {
-        return fnStoreRemovefromcart(oState,oAction)
+        return oState.arCart.filter(oProduct => oProduct.id !== oAction.product.id)
     }
     return oState;
-}//fnStoreReducer
+}//fnStoreCart
+
 
 const fnLogger = oStore => fnNext => oAction => {
-    console.log("fnLogger.oStore: ",oStore," | fnLogger.fnNext: ",fnNext," | fnLogger.oAction: ",oAction)
+    //console.log("fnLogger.oStore: ",oStore," | fnLogger.fnNext: ",fnNext," | fnLogger.oAction: ",oAction)
+    console.log("fnLogger dispatching oAction: ",oAction)
     let oResult = fnNext(oAction)
+    console.log("fnLogger oStore.getstate() next state: ",oStore.getState())
     return oResult
 }
 
 //exporta un objeto oStore. La función reductora estara a la escucha de los cambios de estado para actualizarlos.
 //se inicializa con un estado inicial vacio arCart:[]
 //export default createStore(fnStoreReducer, { arCart:[], arProducts:[] }, applyMiddleware(fnLogger));
-export default createStore(fnStoreReducer, { arCart:[], arProducts:[]  },applyMiddleware(fnLogger,fnThunk));
+export default createStore(combineReducers({arCart:fnStoreCart,arProducts:fnStoreProducts}),applyMiddleware(fnLogger,fnThunk));
