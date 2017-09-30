@@ -14,31 +14,31 @@ import fnThunk from "redux-thunk"
 console.log("load 1: store.js")
 console.log("fnThunk",fnThunk);
 
-const fnStoreProducts = (oState=[],oAction)=>{
+const fnStoreProducts = (arState=[],oAction)=>{
     console.log("fnStoreProducts.oAction.type",oAction.type)
-    console.log("fnStoreProducts.oState",oState)
+    console.log("fnStoreProducts.arState",arState)
 
     if(oAction.type === "REPLACE_PRODUCTS")
     {
         let oStateNew = oAction.arProducts
         return oStateNew
     }
-    return oState;
+    return arState;
 }//fnStoreProducts
 
-const fnStoreCart = (oState=[],oAction)=>{
+const fnStoreCart = (arState=[],oAction)=>{
     console.log("fnStoreCart.oAction.type",oAction.type)
-    console.log("fnStoreCart.oState",oState)
+    console.log("fnStoreCart.arState",arState)
 
     if(oAction.type === "ADD_TO_CART")
-    {
-        return oState.arCart.concat(oAction.product)
+    {        
+        return arState.concat(oAction.product)
     }
     else if(oAction.type === "REMOVE_FROM_CART")
     {
-        return oState.arCart.filter(oProduct => oProduct.id !== oAction.product.id)
+        return arState.filter(oProduct => oProduct.id !== oAction.product.id)
     }
-    return oState;
+    return arState;
 }//fnStoreCart
 
 
