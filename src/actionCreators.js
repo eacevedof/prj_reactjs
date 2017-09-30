@@ -1,9 +1,9 @@
 //actionCreators.js 
 //funciones que se le pasan al store
 //son funciones que devuelve un "Action"
-import axios from "axios"
+import fnAxios from "axios"
 console.log("load 2: actionCreators.js")
-console.log("axios -> ",axios)
+console.log("actionCreatros.js fnAxios: ",fnAxios)
 
 const fnAcAddToCart = oProduct => {
     //aqui se podría llamar a un servidor remoto
@@ -27,13 +27,9 @@ const fnAcRemoveFromCart = oProduct => {
 //https://youtu.be/dRlD0YqU6w4?t=517 configuracion de esta funcion
 const fnAcLoadProducts = ()=>{
     console.log("creator: fnAcLoadProducts")
-//    const  arProducts = [
-//                { id: 1, name: "Hipster Ultimate", price: 299, image: "https://s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-1.jpg" },
-//                { id: 2, name: "On Motion Live", price: 99, image: "https://s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-2.jpg" },
-//                { id: 3, name: "Underground Max", price: 149, image: "https://s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-3.jpg" },
-//            ] 
+    
     return fnDispatch => {
-        return axios.get("http://json.theframework.es/index.php?getfile=demoproducts.json")
+        return fnAxios.get("http://json.theframework.es/index.php?getfile=demoproducts.json")
                 .then(oResponse => {
                     let oAction = {
                         type: "REPLACE_PRODUCTS",
