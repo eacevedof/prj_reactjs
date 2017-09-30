@@ -21,8 +21,11 @@ const oStyles = {
     }
 }//oStyles
 
-const fnProductList = ({arProducts,fnAddToCart})=> {
+const fnProductList = ({ arProducts, fnAddToCart }) => {
     console.log("fnProductList.render()")
+    console.log("fnProductList: arProducts",arProducts)
+    console.log("fnProductList: fnAddToCart",fnAddToCart)
+    
     return (
         <div style={oStyles.products}>
             {arProducts.map(oProduct =>
@@ -36,8 +39,8 @@ const fnProductList = ({arProducts,fnAddToCart})=> {
                             </Button>
                         </p>
                     </div>
-                </div>
-            )}
+                </div>)
+            }
         </div>
     )//render
 }//fnProductList
@@ -50,15 +53,15 @@ const fnMapStateToProps = (oState)=>{
     return oStateNew
 }
 
-const fnMapDispatchToProps = (fnDispatch)=>{
+const fnMapDispatchToProps = fnDispatch => {
     console.log("PL.fnMapDispatchToProps")
     let oDispatch = {
-        fnLoadProducts : arProducts=>{
+        fnLoadProducts : arProducts => {
             console.log("oDispatch.fnLoadProducts")
             let oAction = fnAcLoadProducts(arProducts)
             fnDispatch(oAction)
         },
-        fnAddToCart : oProduct=>{
+        fnAddToCart : oProduct => {
             console.log("oDispatch.fnAddToCart")
             let oAction = fnAcAddToCart(oProduct)
             fnDispatch(oAction)

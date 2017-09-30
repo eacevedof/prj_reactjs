@@ -32,19 +32,17 @@ const fnAcLoadProducts = ()=>{
 //                { id: 2, name: "On Motion Live", price: 99, image: "https://s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-2.jpg" },
 //                { id: 3, name: "Underground Max", price: 149, image: "https://s3.amazonaws.com/makeitreal/projects/e-commerce/camiseta-3.jpg" },
 //            ] 
-
-    const fn = fnDispatch => {
-       return axios.get("http://json.theframework.es/index.php?getfile=demoproducts.json")
+    return fnDispatch => {
+        return axios.get("http://json.theframework.es/index.php?getfile=demoproducts.json")
                 .then(oResponse => {
                     let oAction = {
                         type: "REPLACE_PRODUCTS",
                         arProducts: oResponse.data
                     }                    
                     fnDispatch(oAction)
-                })
-    }//fn
+                })//then
+    }//return fn
 
-    return fn
 }//fnAcLoadProducts
 
 //publico estas dos funciones
