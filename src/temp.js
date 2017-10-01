@@ -12,20 +12,21 @@ export var ActionTypes = {
 
 };
 
-export default function createStore(reducer, fnMiddleware, enhancer) {
+export default function createStore(reducer, preloaders, enhancer) {
   var _ref2;
 
-  if (typeof fnMiddleware === 'function' && typeof enhancer === 'undefined') {
-    enhancer = fnMiddleware;
-    fnMiddleware = undefined;
+  if (typeof preloaders === 'function' && typeof enhancer === 'undefined') {
+    enhancer = preloaders;
+    preloaders = undefined;
   }
 
   if (typeof enhancer !== 'undefined') {
     if (typeof enhancer !== 'function') {
       throw new Error('Expected the enhancer to be a function.');
     }
-
-    return enhancer(createStore)(reducer, fnMiddleware);
+    //si el preloader es una funcion-> un midlleware el middleware jecuta el dispatch(action) y devuelve
+    //devuelve el store que se ha creado dentro del muddleware.
+    return enhancer(createStore)(reducer, preloaders);
   }
 
   if (typeof reducer !== 'function') {
@@ -33,7 +34,7 @@ export default function createStore(reducer, fnMiddleware, enhancer) {
   }
 
   var argReducer = reducer;
-  var currentState = fnMiddleware;
+  var currentState = preloaders;
   var currentListeners = [];
   var nextListeners = currentListeners;
   var isDispatching = false;
