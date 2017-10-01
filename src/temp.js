@@ -12,12 +12,12 @@ export var ActionTypes = {
 
 };
 
-export default function createStore(reducer, preloadedState, enhancer) {
+export default function createStore(reducer, fnMiddleware, enhancer) {
   var _ref2;
 
-  if (typeof preloadedState === 'function' && typeof enhancer === 'undefined') {
-    enhancer = preloadedState;
-    preloadedState = undefined;
+  if (typeof fnMiddleware === 'function' && typeof enhancer === 'undefined') {
+    enhancer = fnMiddleware;
+    fnMiddleware = undefined;
   }
 
   if (typeof enhancer !== 'undefined') {
@@ -25,7 +25,7 @@ export default function createStore(reducer, preloadedState, enhancer) {
       throw new Error('Expected the enhancer to be a function.');
     }
 
-    return enhancer(createStore)(reducer, preloadedState);
+    return enhancer(createStore)(reducer, fnMiddleware);
   }
 
   if (typeof reducer !== 'function') {
@@ -33,7 +33,7 @@ export default function createStore(reducer, preloadedState, enhancer) {
   }
 
   var argReducer = reducer;
-  var currentState = preloadedState;
+  var currentState = fnMiddleware;
   var currentListeners = [];
   var nextListeners = currentListeners;
   var isDispatching = false;

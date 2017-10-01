@@ -58,6 +58,7 @@ const fnLogger = oStore => fnNext => oAction => {
 const fnCombined = combineReducers({arCart:fnStoreCart,arProducts:fnStoreProducts})
 console.log("STORE.fnCombined",fnCombined)
 
+//function applyMiddleware(...middlewares) 
 const fnMiddleWare = applyMiddleware(fnLogger,fnThunk)
 console.log("STORE.fnMiddleWare",fnMiddleWare)
 
