@@ -39,7 +39,7 @@ const fnAcLoadProducts = ()=>{
                     }                    
                     fnDispatch(oAction)
                 })//then
-    }//return fn
+    }//return fnDispatch
 
 }//fnAcLoadProducts
 

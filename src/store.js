@@ -47,7 +47,7 @@ const fnLogger = oStore => fnNext => oAction => {
     let oResult = fnNext(oAction)
     console.log("STORE.fnLogger oStore.getstate() next state: ",oStore.getState())
     return oResult
-}
+}//fnLogger
 
 //exporta un objeto oStore. La función reductora estara a la escucha de los cambios de estado para actualizarlos.
 //se inicializa con un estado inicial vacio arCart:[]
@@ -62,3 +62,26 @@ const oStore = createStore(fnDispatch,fnSubscribe)
 //oStore: {dispatch: ƒ, subscribe: ƒ, getState: ƒ, replaceReducer: ƒ, Symbol(observable): ƒ}
 console.log("STORE.oStore",oStore)
 export default oStore
+
+
+/*
+ const getNewState = (oState,oAction) => {
+    console.log("oState",oState)
+    //operator to copy enumerable properties from one object to another 
+    console.log("...oState",{...oState})
+
+    if(oAction.type === "ADD_TO_CART")
+    {
+        let oStateNew = {
+            ...oState,
+            arCart: oState.arCart.concat(oAction.product)
+        }
+
+        console.log("oStateNew",oStateNew)
+        return oStateNew
+    }
+}//getNewState
+
+const oNewState = getNewState({arProducts:[],arCart:[]}
+                    ,{type:"ADD_TO_CART",product:{id:"20",nombre:"PRODUCTO XXXYYY"}})
+*/
