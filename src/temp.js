@@ -32,7 +32,7 @@ export default function createStore(reducer, preloadedState, enhancer) {
     throw new Error('Expected the reducer to be a function.');
   }
 
-  var currentReducer = reducer;
+  var argReducer = reducer;
   var currentState = preloadedState;
   var currentListeners = [];
   var nextListeners = currentListeners;
@@ -139,7 +139,7 @@ export default function createStore(reducer, preloadedState, enhancer) {
 
     try {
       isDispatching = true;
-      currentState = currentReducer(currentState, action);
+      currentState = argReducer(currentState, action);
     } finally {
       isDispatching = false;
     }
@@ -168,7 +168,7 @@ export default function createStore(reducer, preloadedState, enhancer) {
       throw new Error('Expected the nextReducer to be a function.');
     }
 
-    currentReducer = nextReducer;
+    argReducer = nextReducer;
     dispatch({ type: ActionTypes.INIT });
   }
 
