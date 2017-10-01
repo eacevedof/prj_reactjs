@@ -12,7 +12,8 @@ import fnThunk from "redux-thunk"
 //Registra los suscriptores a través de subscribe(fn)
 //Permite que el estado sea actualizado a través del método dispatch(fn)
 console.log("load 1: store.js")
-console.log("fnThunk",fnThunk);
+console.log("STORE.fnThunk",fnThunk);
+console.log("STORE.createStore",createStore)
 
 const fnStoreProducts = (arState=[],oAction)=>{
     console.log("STORE.fnStoreProducts.oAction.type",oAction.type)
@@ -44,21 +45,24 @@ const fnStoreCart = (arState=[],oAction)=>{
 const fnLogger = oStore => fnNext => oAction => {
     //console.log("fnLogger.oStore: ",oStore," | fnLogger.fnNext: ",fnNext," | fnLogger.oAction: ",oAction)
     console.log("STORE.fnLogger dispatching oAction: ",oAction)
+    console.log("STORE.fnLogger fnNext: ",fnNext)
     let oResult = fnNext(oAction)
     console.log("STORE.fnLogger oStore.getstate() next state: ",oStore.getState())
+    console.log("STORE.fnLogger oResult: ",oResult)
     return oResult
 }//fnLogger
 
 //exporta un objeto oStore. La función reductora estara a la escucha de los cambios de estado para actualizarlos.
 //se inicializa con un estado inicial vacio arCart:[]
 //export default createStore(fnStoreReducer, { arCart:[], arProducts:[] }, applyMiddleware(fnLogger));
-const fnDispatch = combineReducers({arCart:fnStoreCart,arProducts:fnStoreProducts})
-console.log("STORE.fnDispatch",fnDispatch)
+const fnCombined = combineReducers({arCart:fnStoreCart,arProducts:fnStoreProducts})
+console.log("STORE.fnCombined",fnCombined)
 
-const fnSubscribe = applyMiddleware(fnLogger,fnThunk)
-console.log("STORE.fnSubscribe",fnSubscribe)
+const fnMiddleWare = applyMiddleware(fnLogger,fnThunk)
+console.log("STORE.fnMiddleWare",fnMiddleWare)
 
-const oStore = createStore(fnDispatch,fnSubscribe)
+//function createStore(reducer, preloadedState, enhancer)
+const oStore = createStore(fnCombined,fnMiddleWare)
 //oStore: {dispatch: ƒ, subscribe: ƒ, getState: ƒ, replaceReducer: ƒ, Symbol(observable): ƒ}
 console.log("STORE.oStore",oStore)
 export default oStore
