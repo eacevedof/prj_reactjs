@@ -31,7 +31,7 @@ const fnAcLoadProducts = ()=>{
     
     return fnDispatch => {
         console.log("ACTIONCREATORS.fnAcLoadProducts.fnDispatch",fnDispatch)
-        return fnAxios.get("http://json.theframework.es/index.php?getfile=demoproducts.json")
+        let oPromise = fnAxios.get("http://json.theframework.es/index.php?getfile=demoproducts.json")
                 .then(oResponse => {
                     console.log("ACTIONCREATORS.fnAxios.then oResponse:",oResponse)
                     let oAction = {
@@ -40,6 +40,8 @@ const fnAcLoadProducts = ()=>{
                     }                    
                     fnDispatch(oAction)
                 })//then
+        console.log("oPromise",oPromise)
+        return oPromise
     }//return fnDispatch
 
 }//fnAcLoadProducts
