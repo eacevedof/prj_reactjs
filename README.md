@@ -106,6 +106,8 @@ yarn add axios
 
 yarn start
 
+yarn install --force
+
 ```
 
 ```
